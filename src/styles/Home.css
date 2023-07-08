@@ -26,6 +26,16 @@ body {
     bottom: 0;
 }
 
+.hr-container {
+    width: 80vw;
+    margin: 5vh auto;
+}
+
+.animeHr {
+    display: flex;
+    overflow: hidden;
+}
+
 .noise {
     position: fixed;
     top: -50%;
@@ -221,4 +231,311 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+
+/*****/
+
+.noise {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: transparent url('../images/noise.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .3;
+    visibility: visible;
+}
+
+.linkNav {
+    z-index: 2;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.nav-container {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 10vh 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.circle-container {
+    position: relative;
+    text-align: right;
+    display: flex;
+    justify-content: right;
+    margin-top: 20vh;
+}
+
+.circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 12px;
+    /* background-color: antiquewhite;*/
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.logo {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: url('../images/me6.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.circleText {
+    position: absolute;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 12s linear infinite;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.circleText span {
+    position: absolute;
+    transform-origin: 0 200px;
+    left: 50%;
+}
+
+.bg-1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: url('../images/800x600_1.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s ease-in-out;
+}
+
+.bg-2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: url('../images/800x600_2.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s ease-in-out;
+}
+
+.bg-3 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: url('../images/800x600_3.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s ease-in-out;
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bg-animation {
+    0% {
+        transform: translate(0, 0)
+    }
+    10% {
+        transform: translate(-5%, -5%)
+    }
+    20% {
+        transform: translate(-10%, 5%)
+    }
+    30% {
+        transform: translate(5%, -10%)
+    }
+    40% {
+        transform: translate(-5%, 15%)
+    }
+    50% {
+        transform: translate(-10%, 5%)
+    }
+    60% {
+        transform: translate(15%, 0)
+    }
+    70% {
+        transform: translate(0, 10%)
+    }
+    80% {
+        transform: translate(-15%, 0)
+    }
+    90% {
+        transform: translate(10%, 5%)
+    }
+    100% {
+        transform: translate(5%, 0)
+    }
+}
+
+.fonts {
+    font-family: Raleway
+}
+
+.main {
+    overflow: hidden;
+    background-color: black;
+}
+
+.after {
+    background-color: rgb(204, 204, 223);
+}
+
+.anime2 {
+    display: flex;
+}
+
+.anime22 {
+    display: flex;
+    justify-content: center;
+}
+
+.animeImage {
+    display: flex;
+    justify-content: right;
+}
+
+.animeImage2 {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.img-cont-main {
+    width: 80vw;
+    margin: 20vh auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img-container {
+    background-position: center;
+    position: relative;
+    background-image: url('../images/food.jpg');
+}
+
+.hr {
+    border-top: 1px solid black;
+}
+
+.anime3 {
+    display: flex;
+}
+
+.page1 {
+    min-height: 100vh;
+    position: fixed;
+}
+
+.heading {
+    height: 80vh;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.heading div {
+    font-size: 120px;
+    overflow: hidden;
+}
+
+.text-transparent {
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+}
+
+.div-desktop-text {
+    overflow: hidden;
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.div-desktop-text2 {
+    margin-top: 0;
+    overflow: hidden;
+    font-size: 55px;
+}
+
+.div-mobile-text {
+    overflow: hidden;
+    font-size: 24px;
+    display: flex;
+}
+
+@media only screen and (max-width:600px) {
+    .img1,
+    .img2,
+    .img3,
+    .img4,
+    .img5 {
+        max-width: 250px;
+        max-height: 250px;
+        background-position: center;
+    }
+    .bg-1,
+    .bg-2,
+    .bg-3 {
+        width: 150px;
+        height: 150px;
+    }
+    .heading div {
+        font-size: 50px;
+    }
+    .linkNav {
+        font-size: 15px;
+    }
+    .circle {
+        width: 200px;
+        height: 200px;
+    }
+    .circleText span {
+        transform-origin: 0 100px;
+    }
+    .circle-container {
+        margin-top: 42vh;
+    }
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+    .img-cont-main {
+        margin-bottom: 2vh;
+    }
 }
