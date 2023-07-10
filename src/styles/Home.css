@@ -51,7 +51,7 @@ body {
 }
 
 .img1 {
-    background: url('../images/about.jpg');
+    background: url('../images/umbrellas_colorful_desktop.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -255,6 +255,23 @@ body {
     text-decoration: none;
     color: black;
     font-size: 20px;
+    right: 10%;
+}
+.linkNav2 {
+    z-index: 2;
+    position: absolute;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.411);
+    font-size: 20px;
+    right: 5%;
+}
+@media only screen and (max-width:600px) {
+
+    .linkNav {
+        right: 25%;
+       
+    }
+
 }
 
 .nav-container {
@@ -280,7 +297,6 @@ body {
     align-items: center;
     flex-wrap: wrap;
     font-size: 12px;
-    /* background-color: antiquewhite;*/
     width: 400px;
     height: 400px;
     border-radius: 50%;
@@ -405,7 +421,8 @@ body {
 }
 
 .fonts {
-    font-family: Raleway
+  font-family: 'Raleway', sans-serif;
+
 }
 
 .main {
@@ -419,6 +436,11 @@ body {
 
 .anime2 {
     display: flex;
+    
+}
+.animeTextCenter{
+    display: flex;
+    justify-content: center;
 }
 
 .anime22 {
@@ -509,6 +531,11 @@ body {
         max-height: 250px;
         background-position: center;
     }
+    .img1{
+        background: url('../images/umbrellas_colorful_kids_mobile.jpg');
+        background-position: center;
+        background-size: cover;
+    }
     .bg-1,
     .bg-2,
     .bg-3 {
@@ -518,8 +545,8 @@ body {
     .heading div {
         font-size: 50px;
     }
-    .linkNav {
-        font-size: 15px;
+    .linkNav,.linkNav2 {
+        font-size: 17px;
     }
     .circle {
         width: 200px;

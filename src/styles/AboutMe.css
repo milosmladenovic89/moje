@@ -23,15 +23,37 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 80vw;
-    margin: 0 auto;
+    width: 100vw;
+    margin: 10vh auto;
 }
 
 .link-nav {
     position: absolute;
-    right: 0;
+    right: 10%;
     z-index: 2;
-    padding: 10vh 0;
+    text-decoration: none;
+    color: grey;
+    font-size: 20px;
+
+}
+
+.link-nav2 {
+    position: absolute;
+    right: 5%;
+    z-index: 2;
     text-decoration: none;
     color: white;
+    font-size: 20px;
+}
+
+
+@media only screen and (max-width:600px) {
+
+    .link-nav {
+        right: 25%;
+    }
+    .link-nav,.link-nav2{
+        font-size: 17px;
+    }
+
 }

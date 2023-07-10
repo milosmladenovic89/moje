@@ -41,7 +41,7 @@ function SectionText2({ children }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   return (
-    <section className="anime2" ref={ref}>
+    <section className="animeTextCenter" ref={ref}>
       <span
         style={{
           opacity: isInView ? 1 : 0,
@@ -129,7 +129,6 @@ function SectionHr({ children }) {
     <section className='animeHr' ref={ref}>
       <span
         style={{
-
           transformOrigin: "0%",
           width: isInView ? '100%' : '0%',
           transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
@@ -140,12 +139,19 @@ function SectionHr({ children }) {
     </section>
   )
 }
-export default function Homepage() {
-  let text = 'Milos Mladenovic - Frontend Developer'.split('')
 
+
+
+
+
+
+export default function Homepage() {
   const [mobile, setMobile] = useState(window.innerWidth)
   const [img, setImg] = useState('bg-1')
 
+
+
+  
   useEffect(() => {
     const interval = setInterval(() => {
       if (img === "bg-1") {
@@ -173,7 +179,7 @@ export default function Homepage() {
     }
   }, [])
 
-
+  let text = 'Milos Mladenovic - Frontend Developer'.split('')
   return (
     <div className="main">
       <div>
@@ -193,7 +199,7 @@ export default function Homepage() {
                 </Link>
               </span>
               <span style={{ marginLeft: '100px' }}>
-                <Link className="linkNav" to="/">
+                <Link className="linkNav2" to="/">
                   Home
                 </Link>
               </span>
@@ -253,6 +259,9 @@ export default function Homepage() {
           </div>
 
           <div className='hr-container'>
+            <SectionText2>
+              <span>Projects</span>
+            </SectionText2>
             <SectionHr>
               <hr className='hr' />
             </SectionHr>
@@ -260,8 +269,6 @@ export default function Homepage() {
 
 
           <div className="img-cont-main">
-
-
 
             <div className="img-container">
               <SectionImg2></SectionImg2>
