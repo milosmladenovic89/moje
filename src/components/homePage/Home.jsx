@@ -140,6 +140,25 @@ function SectionHr({ children }) {
   )
 }
 
+function SectionHrRightToLeft({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeHr-right' ref={ref}>
+      <span
+        style={{
+          transformOrigin: "0%",
+          width: isInView ? '100%' : '0%',
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
+
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
+
 
 
 
@@ -151,7 +170,7 @@ export default function Homepage() {
 
 
 
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (img === "bg-1") {
@@ -269,36 +288,33 @@ export default function Homepage() {
 
 
           <div className="img-cont-main">
-
-            <div className="img-container">
-              <SectionImg2></SectionImg2>
-            </div>
+            <Link to={"./quiz"} className='home-links-toProject'>
+              <div className="img-container">
+                <h2 className='h2-quiz'>QUIZ</h2>
+                <SectionImg2></SectionImg2>
+              </div>
+            </Link>
 
             {mobile > 600 && (
               <SectionText3>
-                <h2 className="div-desktop-text">HELLO WORLD 2</h2>
-                {mobile > 600 && (
-                  <SectionText3>
-                    <h2 className="div-desktop-text">HELLO WORLD 3</h2>
-                  </SectionText3>
-                )}
+                <h2 className="div-desktop-text">Quiz</h2>
               </SectionText3>
             )}
-
           </div>
 
           {mobile < 600 && (
             <SectionText3>
-              <h2 className="div-mobile-text">HELLO WORLD 2</h2>
-              {mobile < 600 && (
-                <SectionText3>
-                  <h2 className="div-mobile-text">HELLO WORLD 3</h2>
-                </SectionText3>
-              )}
+              <h2 className="div-mobile-text">Quiz</h2>
             </SectionText3>
           )}
 
 
+          <div className='hr-container'>
+
+            <SectionHrRightToLeft>
+              <hr className='hr' />
+            </SectionHrRightToLeft>
+          </div>
 
 
           <div style={{ marginTop: '50vh' }}>
