@@ -113,7 +113,7 @@ function SectionImg2({ children }) {
                 ? '20vh'
                 : '10vh',
           zIndex: 999,
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s',
+          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
         }}
       >
         {children}
@@ -160,8 +160,42 @@ function SectionHrRightToLeft({ children }) {
 }
 
 
+function SectionHrHalf({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeHr-half-left' ref={ref}>
+      <span
+        style={{
 
+          width: isInView ? '50vw' : '0vw',
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
 
+function SectionHrHalfRight({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeHr-half-right' ref={ref}>
+      <span
+        style={{
+
+          width: isInView ? '50vw' : '0vw',
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
+
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
 
 
 export default function Homepage() {
@@ -408,14 +442,27 @@ export default function Homepage() {
             </SectionText3>
           )}
 
+          <div className='hr-container-flex'>
+            <SectionHrHalf>
+              <span className='span-half1'></span>
+            </SectionHrHalf>
 
-
-
-          <div style={{ marginTop: '50vh' }}>
-            <SectionText2>
-              <h2>HELLO WORLD 3</h2>
-            </SectionText2>
+            <SectionHrHalfRight>
+              <span className='span-half2'></span>
+            </SectionHrHalfRight>
           </div>
+
+
+
+
+          <footer style={{ display: "flex", justifyContent: "space-between" ,padding:"20px"}}>
+
+            <p>Link</p>
+            <p>Back to top</p>
+
+          </footer>
+
+
         </motion.div>
       </div>
 
