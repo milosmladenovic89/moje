@@ -34,13 +34,14 @@ body {
 .animeHr {
     display: flex;
     overflow: hidden;
+    margin-top: 40vh;
 }
 
 .animeHr-right {
     display: flex;
     overflow: hidden;
     justify-content: right;
-    margin-top: 50vh;
+    margin-top: 40vh;
 }
 
 .noise {
@@ -394,33 +395,43 @@ body {
     0% {
         transform: translate(0, 0)
     }
+
     10% {
         transform: translate(-5%, -5%)
     }
+
     20% {
         transform: translate(-10%, 5%)
     }
+
     30% {
         transform: translate(5%, -10%)
     }
+
     40% {
         transform: translate(-5%, 15%)
     }
+
     50% {
         transform: translate(-10%, 5%)
     }
+
     60% {
         transform: translate(15%, 0)
     }
+
     70% {
         transform: translate(0, 10%)
     }
+
     80% {
         transform: translate(-15%, 0)
     }
+
     90% {
         transform: translate(10%, 5%)
     }
+
     100% {
         transform: translate(5%, 0)
     }
@@ -472,6 +483,8 @@ body {
     overflow: hidden;
 }
 
+
+
 .img-container {
     background-position: center;
     position: relative;
@@ -479,12 +492,49 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .img-container:hover h2 {
     --_p: 100%;
     color: #fafdfd;
     padding: 20px 60px;
+    opacity: 1;
+    transition: 1.5s ease;
+    text-shadow: 2px 1px 1px #56caf1, 1px 2px 1px #56caf1, 1px 3px 1px #56caf1, 1px 4px 1px #56caf1, 1px 5px 1px #56caf1, 1px 6px 1px #56caf1, 1px 7px 1px #56caf1, 1px 8px 1px #56caf1, 1px 9px 1px #56caf1, 1px 10px 1px #56caf1, 1px 18px 6px rgba(86, 202, 241, 0.4), 1px 22px 10px rgba(86, 202, 241, 0.2), 1px 25px 35px rgba(86, 202, 241, 0.2), 1px 30px 60px rgba(86, 202, 241, 0.4);
+    transform: translateY(-30px);
+}
+
+
+
+.img-container-weather {
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    background-image: url('../images/umbrellas_colorful_kids_96317_1280x720.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container-memes {
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    background-image: url('../images/memes-desktop.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container-tenzi {
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    background-image: url('../images/dice-desktop.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .h2-quiz {
@@ -498,15 +548,11 @@ body {
     transition: 0.8s;
 }
 
-.img-container:hover>h2 {
-    opacity: 1;
-    transition: 1.5s ease;
-    text-shadow: 2px 1px 1px #56caf1, 1px 2px 1px #56caf1, 1px 3px 1px #56caf1, 1px 4px 1px #56caf1, 1px 5px 1px #56caf1, 1px 6px 1px #56caf1, 1px 7px 1px #56caf1, 1px 8px 1px #56caf1, 1px 9px 1px #56caf1, 1px 10px 1px #56caf1, 1px 18px 6px rgba(86, 202, 241, 0.4), 1px 22px 10px rgba(86, 202, 241, 0.2), 1px 25px 35px rgba(86, 202, 241, 0.2), 1px 30px 60px rgba(86, 202, 241, 0.4);
-    transform: translateY(-30px);
-}
+
 
 .home-links-toProject {
     z-index: 1000;
+
 }
 
 .hr {
@@ -546,6 +592,14 @@ body {
     margin-left: 50px;
 }
 
+.div-desktop-text-left {
+    overflow: hidden;
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-right: 50px;
+}
+
 .div-desktop-text2 {
     margin-top: 0;
     overflow: hidden;
@@ -565,6 +619,7 @@ body {
 }
 
 @media only screen and (max-width:600px) {
+
     .img1,
     .img2,
     .img3,
@@ -574,58 +629,96 @@ body {
         max-height: 250px;
         background-position: center;
     }
+
     .img1 {
         background: url('../images/umbrellas_colorful_kids_mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
     .img2 {
         background: url('../images/brain-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
     .img3 {
         background: url('../images/memes-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
     .img4 {
         background: url('../images/dice-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
     .img5 {
         background: url('../images/aye-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
+    .img-container {
+        background: url('../images/brain-desktop-mobile.png');
+        background-position: center;
+        object-fit: contain;
+
+    }
+
+    .img-container-weather {
+        background: url('../images/umbrellas_colorful_desktop-mobile.png');
+        background-position: center;
+        object-fit: cover;
+    }
+
+    .img-container-memes {
+        background: url('../images/memes-desktop-mobile.png');
+        background-position: center;
+        object-fit: cover;
+    }
+
+    .img-container-tenzi {
+        background: url('../images/dice-desktop-mobile.png');
+        background-position: center;
+        object-fit: cover;
+    }
+
     .bg-1,
     .bg-2,
     .bg-3 {
         width: 150px;
         height: 150px;
     }
+
     .heading div {
-        font-size: 50px;
+        font-size: 40px;
     }
+
     .linkNav,
     .linkNav2 {
         font-size: 17px;
     }
+
     .circle {
         width: 200px;
         height: 200px;
     }
+
     .circleText span {
         transform-origin: 0 100px;
     }
+
     .circle-container {
         margin-top: 42vh;
     }
+
     .logo {
         width: 150px;
         height: 150px;
     }
+
     .img-cont-main {
         margin-bottom: 2vh;
     }

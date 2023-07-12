@@ -107,8 +107,8 @@ function SectionImg2({ children }) {
           height:
             mobile > 600
               ? isInView
-                ? '50vh'
-                : '40vh'
+                ? '55vh'
+                : '20vh'
               : mobile < 600 && isInView
                 ? '20vh'
                 : '10vh',
@@ -315,6 +315,100 @@ export default function Homepage() {
               <hr className='hr' />
             </SectionHrRightToLeft>
           </div>
+
+
+          <div className="img-cont-main">
+
+            {mobile > 600 && (
+              <SectionText3>
+                <h2 className="div-desktop-text-left">Weather</h2>
+              </SectionText3>
+            )}
+
+
+            <Link to={"./weather"} className='home-links-toProject'>
+              <div className="img-container img-container-weather">
+                <h2 className='h2-quiz'>Weather</h2>
+                <SectionImg2></SectionImg2>
+              </div>
+            </Link>
+
+
+          </div>
+
+          {mobile < 600 && (
+            <SectionText3>
+              <h2 className="div-mobile-text">Weather</h2>
+            </SectionText3>
+          )}
+
+
+          <div className='hr-container'>
+
+            <SectionHr>
+              <hr className='hr' />
+            </SectionHr>
+          </div>
+
+          <div className="img-cont-main">
+            <Link to={"./memes"} className='home-links-toProject'>
+              <div className="img-container img-container-memes">
+                <h2 className='h2-quiz'>Memes</h2>
+                <SectionImg2></SectionImg2>
+              </div>
+            </Link>
+
+            {mobile > 600 && (
+              <SectionText3>
+                <h2 className="div-desktop-text">Memes</h2>
+              </SectionText3>
+            )}
+          </div>
+
+          {mobile < 600 && (
+            <SectionText3>
+              <h2 className="div-mobile-text">Memes</h2>
+            </SectionText3>
+          )}
+
+
+
+
+
+          <div className='hr-container'>
+
+            <SectionHrRightToLeft>
+              <hr className='hr' />
+            </SectionHrRightToLeft>
+          </div>
+
+
+          <div className="img-cont-main">
+
+            {mobile > 600 && (
+              <SectionText3>
+                <h2 className="div-desktop-text-left">Tenzi</h2>
+              </SectionText3>
+            )}
+
+
+            <Link to={"./tenzi"} className='home-links-toProject'>
+              <div className="img-container img-container-tenzi">
+                <h2 className='h2-quiz'>Tenzi</h2>
+                <SectionImg2></SectionImg2>
+              </div>
+            </Link>
+
+
+          </div>
+
+          {mobile < 600 && (
+            <SectionText3>
+              <h2 className="div-mobile-text">Tenzi</h2>
+            </SectionText3>
+          )}
+
+
 
 
           <div style={{ marginTop: '50vh' }}>
