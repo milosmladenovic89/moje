@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import '../../styles/Home.css'
+import { HashLink } from 'react-router-hash-link'
 
 
 function SectionText({ children }) {
@@ -167,7 +168,6 @@ function SectionHrHalf({ children }) {
     <section className='animeHr-half-left' ref={ref}>
       <span
         style={{
-
           width: isInView ? '50vw' : '0vw',
           transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
         }}
@@ -324,7 +324,7 @@ export default function Homepage() {
           <div className="img-cont-main">
             <Link to={"./quiz"} className='home-links-toProject'>
               <div className="img-container">
-                <h2 className='h2-quiz'>QUIZ</h2>
+                <h2 className='h2-quiz'>Quiz</h2>
                 <SectionImg2></SectionImg2>
               </div>
             </Link>
@@ -362,7 +362,7 @@ export default function Homepage() {
 
             <Link to={"./weather"} className='home-links-toProject'>
               <div className="img-container img-container-weather">
-                <h2 className='h2-quiz'>Weather</h2>
+                <h2 className='h2-quiz-left'>Weather</h2>
                 <SectionImg2></SectionImg2>
               </div>
             </Link>
@@ -428,7 +428,7 @@ export default function Homepage() {
 
             <Link to={"./tenzi"} className='home-links-toProject'>
               <div className="img-container img-container-tenzi">
-                <h2 className='h2-quiz'>Tenzi</h2>
+                <h2 className='h2-quiz-left'>Tenzi</h2>
                 <SectionImg2></SectionImg2>
               </div>
             </Link>
@@ -455,10 +455,10 @@ export default function Homepage() {
 
 
 
-          <footer style={{ display: "flex", justifyContent: "space-between" ,padding:"20px"}}>
+          <footer style={{ display: "flex", justifyContent: "space-between", padding: "20px" }}>
 
-            <p>Link</p>
-            <p>Back to top</p>
+            <HashLink>Link</HashLink>
+            <HashLink to={"#"}>Back to top</HashLink>
 
           </footer>
 
