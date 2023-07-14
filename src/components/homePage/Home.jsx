@@ -59,9 +59,11 @@ function SectionText2({ children }) {
 function SectionImage({ children }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+
   return (
     <section ref={ref} className="animeImage">
       <span
+
         style={{
           transform: isInView ? 'scale(1)' : 'scale(0)',
           transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s',
@@ -88,11 +90,16 @@ function SectionImg2({ children }) {
     }
   }, [])
 
+
+
+
+
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   return (
     <section ref={ref} className="animeImage2">
       <span
+
         style={{
           transform: 'translate(-50%, -50%)',
           top: '50%',
@@ -151,7 +158,6 @@ function SectionHrRightToLeft({ children }) {
           transformOrigin: "0%",
           width: isInView ? '100%' : '0%',
           transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
-
         }}
       >
         {children}
@@ -185,10 +191,8 @@ function SectionHrHalfRight({ children }) {
     <section className='animeHr-half-right' ref={ref}>
       <span
         style={{
-
           width: isInView ? '50vw' : '0vw',
           transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
-
         }}
       >
         {children}
@@ -197,12 +201,25 @@ function SectionHrHalfRight({ children }) {
   )
 }
 
-
+function SectionHover({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeHover' ref={ref}>
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 2s',
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
 export default function Homepage() {
   const [mobile, setMobile] = useState(window.innerWidth)
   const [img, setImg] = useState('bg-1')
-
-
 
 
   useEffect(() => {
@@ -232,9 +249,10 @@ export default function Homepage() {
     }
   }, [])
 
+
   let text = 'Milos Mladenovic - Frontend Developer'.split('')
   return (
-    <div className="main">
+    <div className="main" id='main'>
       <div>
         <motion.div
           initial={{ y: 1000 }}
@@ -324,7 +342,10 @@ export default function Homepage() {
           <div className="img-cont-main">
             <Link to={"./quiz"} className='home-links-toProject'>
               <div className="img-container">
-                <h2 className='h2-quiz'>Quiz</h2>
+                <SectionHover>
+                  <h2 className='h2-quiz'>Quiz</h2>
+                </SectionHover>
+
                 <SectionImg2></SectionImg2>
               </div>
             </Link>
@@ -362,7 +383,10 @@ export default function Homepage() {
 
             <Link to={"./weather"} className='home-links-toProject'>
               <div className="img-container img-container-weather">
-                <h2 className='h2-quiz-left'>Weather</h2>
+                <SectionHover>
+                  <h2 className='h2-quiz-left'>Weather</h2>
+                </SectionHover>
+
                 <SectionImg2></SectionImg2>
               </div>
             </Link>
@@ -387,7 +411,10 @@ export default function Homepage() {
           <div className="img-cont-main">
             <Link to={"./memes"} className='home-links-toProject'>
               <div className="img-container img-container-memes">
-                <h2 className='h2-quiz'>Memes</h2>
+                <SectionHover>
+                  <h2 className='h2-quiz'>Memes</h2>
+                </SectionHover>
+
                 <SectionImg2></SectionImg2>
               </div>
             </Link>
@@ -428,7 +455,10 @@ export default function Homepage() {
 
             <Link to={"./tenzi"} className='home-links-toProject'>
               <div className="img-container img-container-tenzi">
-                <h2 className='h2-quiz-left'>Tenzi</h2>
+                <SectionHover>
+                  <h2 className='h2-quiz-left'>Tenzi</h2>
+                </SectionHover>
+
                 <SectionImg2></SectionImg2>
               </div>
             </Link>
@@ -458,7 +488,7 @@ export default function Homepage() {
           <footer style={{ display: "flex", justifyContent: "space-between", padding: "20px" }}>
 
             <HashLink>Link</HashLink>
-            <HashLink to={"#"}>Back to top</HashLink>
+            <HashLink className='hashLink' to={"#main"}>Back to top ⇧</HashLink>
 
           </footer>
 
