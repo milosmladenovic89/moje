@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import '../../styles/Home.css'
 import { HashLink } from 'react-router-hash-link'
@@ -29,8 +29,9 @@ function SectionText3({ children }) {
     <section ref={ref} className="anime22">
       <span
         style={{
-          lineHeight: isInView ? 1 : 0,
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1.8s',
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateX(0)' : 'translateX(-200px)',
+          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
         }}
       >
         {children}
@@ -38,6 +39,67 @@ function SectionText3({ children }) {
     </section>
   )
 }
+
+
+function SectionText3MobileLeft({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { amount: 1 })
+  return (
+    <section ref={ref} className="anime-left">
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateX(0)' : 'translateX(-200px)',
+          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
+
+
+function SectionText3MobileRight({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { amount: 1 })
+  return (
+    <section ref={ref} className="anime-right">
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateX(0)' : 'translateX(200px)',
+          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
+
+
+
+
+function SectionText3Left({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section ref={ref} className="anime22-left">
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+
+          transform: isInView ? 'translateX(0)' : 'translateX(200px)',
+          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
+
 function SectionText2({ children }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
@@ -89,9 +151,6 @@ function SectionImg2({ children }) {
       window.removeEventListener('resize', mobileWidth)
     }
   }, [])
-
-
-
 
 
   const ref = useRef(null)
@@ -208,18 +267,22 @@ function SectionHover({ children }) {
     <section className='animeHover' ref={ref}>
       <span
         style={{
-          opacity: isInView ? 1 : 0,
+          //  opacity: isInView ? 1 : 0,
+          visibility: isInView ? "visible" : "hidden",
           transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 2s',
         }}
       >
         {children}
       </span>
-    </section>
+    </section >
   )
 }
+
 export default function Homepage() {
   const [mobile, setMobile] = useState(window.innerWidth)
   const [img, setImg] = useState('bg-1')
+  const [hover, setHover] = useState(false)
+  const [hover2, setHover2] = useState(false)
 
 
   useEffect(() => {
@@ -249,6 +312,19 @@ export default function Homepage() {
     }
   }, [])
 
+  function changeHover() {
+    setHover(true)
+  }
+  function changeHover2() {
+    setHover(false)
+  }
+
+  function changeHover3() {
+    setHover2(true)
+  }
+  function changeHover4() {
+    setHover2(false)
+  }
 
   let text = 'Milos Mladenovic - Frontend Developer'.split('')
   return (
@@ -339,8 +415,8 @@ export default function Homepage() {
           </div>
 
 
-          <div className="img-cont-main">
-            <Link to={"./quiz"} className='home-links-toProject'>
+          <div className="img-cont-main" onMouseOver={changeHover} onMouseOut={changeHover2}>
+            <Link to={"./quiz"} className='home-links-toProject' >
               <div className="img-container">
                 <SectionHover>
                   <h2 className='h2-quiz'>Quiz</h2>
@@ -351,15 +427,82 @@ export default function Homepage() {
             </Link>
 
             {mobile > 600 && (
+
               <SectionText3>
                 <h2 className="div-desktop-text">Quiz</h2>
+
+                <AnimatePresence>
+
+                  {hover && <motion.p
+                    className='desktop-description'
+                    key={"box1"}
+                    transition={{ duration: 0.5 }}
+                    initial={{ x: 200, opacity: 0, scale: 0 }}
+                    animate={{ x: 50, opacity: 1, scale: 1 }}
+                    exit={{ x: 200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.6 } }}
+                  >
+                    Ten different quiz
+                  </motion.p>}
+
+                  {hover && <motion.p
+                    className='desktop-description'
+                    key={"box2"}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    initial={{ x: 200, opacity: 0, scale: 0 }}
+                    animate={{ x: 50, opacity: 1, scale: 1 }}
+                    exit={{ x: 200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.4 } }}
+                  >
+                    Four questions each
+                  </motion.p>}
+                  {hover && <motion.p
+                    className='desktop-description'
+                    key={"box3"}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    initial={{ x: 200, opacity: 0, scale: 0 }}
+                    animate={{ x: 50, opacity: 1, scale: 1 }}
+                    exit={{ x: 200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.2 } }}
+                  >
+                    Each time random quiz
+                  </motion.p>}
+                  {hover && <motion.p
+                    className='desktop-description'
+                    key={"box4"}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    initial={{ x: 200, opacity: 0, scale: 0 }}
+                    animate={{ x: 50, opacity: 1, scale: 1 }}
+                    exit={{ x: 200, opacity: 0, scale: 0, transition: { duration: 0.5 } }}
+                  >
+                    With timer and result
+                  </motion.p>}
+
+                </AnimatePresence>
+
               </SectionText3>
+
             )}
           </div>
 
           {mobile < 600 && (
             <SectionText3>
               <h2 className="div-mobile-text">Quiz</h2>
+
+
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Ten different quiz</p>
+              </SectionText3MobileLeft>
+
+              <SectionText3MobileRight>
+                <p className='desktop-description'>  Four questions each</p>
+              </SectionText3MobileRight>
+
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Each time random quiz</p>
+              </SectionText3MobileLeft>
+
+              <SectionText3MobileRight>
+                <p className='desktop-description'>  With timer and result</p>
+              </SectionText3MobileRight>
+
             </SectionText3>
           )}
 
@@ -372,12 +515,38 @@ export default function Homepage() {
           </div>
 
 
-          <div className="img-cont-main">
+          <div className="img-cont-main" onMouseOver={changeHover3} onMouseOut={changeHover4}>
 
             {mobile > 600 && (
-              <SectionText3>
-                <h2 className="div-desktop-text-left">Weather</h2>
-              </SectionText3>
+              <SectionText3Left>
+                <AnimatePresence>
+                  <h2 className="div-desktop-text-left">Weather</h2>
+                  {hover2 && <motion.p className='desktop-description'
+                    key={"box5"}
+                    transition={{ duration: 0.5 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.6 } }}
+                  >Weather app</motion.p>}
+
+                  {hover2 && <motion.p className='desktop-description'
+                    key={"box6"}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.4 } }}
+                  >Weather and time Api</motion.p>}
+
+                  {hover2 && <motion.p className='desktop-description'
+                    key={"box7"}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.2 } }}
+
+                  >Current time & weather worldwide</motion.p>}
+                </AnimatePresence>
+              </SectionText3Left>
             )}
 
 
@@ -395,9 +564,22 @@ export default function Homepage() {
           </div>
 
           {mobile < 600 && (
-            <SectionText3>
+            <SectionText3Left>
               <h2 className="div-mobile-text">Weather</h2>
-            </SectionText3>
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Weather app</p>
+              </SectionText3MobileLeft>
+
+              <SectionText3MobileRight>
+                <p className='desktop-description'>  Weather and time Api</p>
+              </SectionText3MobileRight>
+
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Current time & weather worldwide</p>
+              </SectionText3MobileLeft>
+
+
+            </SectionText3Left>
           )}
 
 
@@ -408,7 +590,7 @@ export default function Homepage() {
             </SectionHr>
           </div>
 
-          <div className="img-cont-main">
+          <div className="img-cont-main" onMouseOver={changeHover} onMouseOut={changeHover2}>
             <Link to={"./memes"} className='home-links-toProject'>
               <div className="img-container img-container-memes">
                 <SectionHover>
@@ -422,6 +604,51 @@ export default function Homepage() {
             {mobile > 600 && (
               <SectionText3>
                 <h2 className="div-desktop-text">Memes</h2>
+                <AnimatePresence>
+
+                  {hover && <motion.p
+                    className='desktop-description'
+                    key={"box8"}
+                    transition={{ duration: 0.5 }}
+                    initial={{ x: 200, opacity: 0, scale: 0 }}
+                    animate={{ x: 50, opacity: 1, scale: 1 }}
+                    exit={{ x: 200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.6 } }}
+                  >
+                    Memes generator
+                  </motion.p>}
+
+                  {hover && <motion.p
+                    className='desktop-description'
+                    key={"box9"}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    initial={{ x: 200, opacity: 0, scale: 0 }}
+                    animate={{ x: 50, opacity: 1, scale: 1 }}
+                    exit={{ x: 200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.4 } }}
+                  >
+                    Using the Fetch API
+                  </motion.p>}
+                  {hover && <motion.p
+                    className='desktop-description'
+                    key={"box10"}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    initial={{ x: 200, opacity: 0, scale: 0 }}
+                    animate={{ x: 50, opacity: 1, scale: 1 }}
+                    exit={{ x: 200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.2 } }}
+                  >
+                    Memes generator
+                  </motion.p>}
+                  {hover && <motion.p
+                    className='desktop-description'
+                    key={"box11"}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    initial={{ x: 200, opacity: 0, scale: 0 }}
+                    animate={{ x: 50, opacity: 1, scale: 1 }}
+                    exit={{ x: 200, opacity: 0, scale: 0, transition: { duration: 0.5 } }}
+                  >
+                    100 random images
+                  </motion.p>}
+
+                </AnimatePresence>
               </SectionText3>
             )}
           </div>
@@ -429,6 +656,21 @@ export default function Homepage() {
           {mobile < 600 && (
             <SectionText3>
               <h2 className="div-mobile-text">Memes</h2>
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Memes generator</p>
+              </SectionText3MobileLeft>
+
+              <SectionText3MobileRight>
+                <p className='desktop-description'>  Using the Fetch API</p>
+              </SectionText3MobileRight>
+
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Memes generator</p>
+              </SectionText3MobileLeft>
+
+              <SectionText3MobileRight>
+                <p className='desktop-description'>  100 random images</p>
+              </SectionText3MobileRight>
             </SectionText3>
           )}
 
@@ -444,12 +686,47 @@ export default function Homepage() {
           </div>
 
 
-          <div className="img-cont-main">
+          <div className="img-cont-main" onMouseOver={changeHover3} onMouseOut={changeHover4}>
 
             {mobile > 600 && (
-              <SectionText3>
+              <SectionText3Left>
                 <h2 className="div-desktop-text-left">Tenzi</h2>
-              </SectionText3>
+                <AnimatePresence>
+
+                  {hover2 && <motion.p className='desktop-description'
+                    key={"box12"}
+                    transition={{ duration: 0.5 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.6 } }}
+                  >Tenzi dice game</motion.p>}
+
+                  {hover2 && <motion.p className='desktop-description'
+                    key={"box13"}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.4 } }}
+                  >Ten random dice</motion.p>}
+
+                  {hover2 && <motion.p className='desktop-description'
+                    key={"box14"}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.2 } }}
+
+                  >Roll dice fast</motion.p>}
+                  {hover2 && <motion.p className='desktop-description'
+                    key={"box15"}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5 } }}
+
+                  >Get same number</motion.p>}
+                </AnimatePresence>
+              </SectionText3Left>
             )}
 
 
@@ -467,9 +744,25 @@ export default function Homepage() {
           </div>
 
           {mobile < 600 && (
-            <SectionText3>
+            <SectionText3Left>
               <h2 className="div-mobile-text">Tenzi</h2>
-            </SectionText3>
+
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Tenzi dice game</p>
+              </SectionText3MobileLeft>
+
+              <SectionText3MobileRight>
+                <p className='desktop-description'>  Ten random dice</p>
+              </SectionText3MobileRight>
+
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Roll dice fast</p>
+              </SectionText3MobileLeft>
+
+              <SectionText3MobileRight>
+                <p className='desktop-description'>Get same number</p>
+              </SectionText3MobileRight>
+            </SectionText3Left>
           )}
 
           <div className='hr-container-flex'>
@@ -487,16 +780,16 @@ export default function Homepage() {
 
           <footer style={{ display: "flex", justifyContent: "space-between", padding: "20px" }}>
 
-            <HashLink>Link</HashLink>
+            <a className='linkedin-link' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
             <HashLink className='hashLink' to={"#main"}>Back to top ⇧</HashLink>
 
           </footer>
 
 
         </motion.div>
-      </div>
+      </div >
 
       <div className="noise"></div>
-    </div>
+    </div >
   )
 }
