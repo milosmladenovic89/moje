@@ -405,6 +405,23 @@ export default function Homepage() {
             </SectionImage>
           </div>
 
+
+
+
+          <div className='hr-container-flex'>
+            <SectionHrHalf>
+              <span className='span-half1'></span>
+            </SectionHrHalf>
+
+            <SectionHrHalfRight>
+              <span className='span-half2'></span>
+            </SectionHrHalfRight>
+          </div>
+
+
+
+
+
           <div className='hr-container'>
             <SectionText2>
               <span>Projects</span>

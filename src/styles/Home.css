@@ -63,20 +63,22 @@ body {
     display: inline-block;
     text-align: left;
     padding-left: 20px;
-    border-top: 1px solid black;
+    /*  background-position: center !important;*/
+    /*background-repeat: no-repeat !important;*/
+    background-size: cover !important;
+
     width: 100%;
-    background-color: black;
-    padding-bottom: 100px;
+    background: url('../images/panorama.jpg');
+    padding-bottom: 150px;
 }
 
 .span-half2 {
     display: inline-block;
     text-align: right;
     padding-right: 20px;
-    border-top: 1px solid blue;
     width: 100%;
     background-color: blue;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
 }
 
 .noise {
@@ -430,33 +432,43 @@ body {
     0% {
         transform: translate(0, 0)
     }
+
     10% {
         transform: translate(-5%, -5%)
     }
+
     20% {
         transform: translate(-10%, 5%)
     }
+
     30% {
         transform: translate(5%, -10%)
     }
+
     40% {
         transform: translate(-5%, 15%)
     }
+
     50% {
         transform: translate(-10%, 5%)
     }
+
     60% {
         transform: translate(15%, 0)
     }
+
     70% {
         transform: translate(0, 10%)
     }
+
     80% {
         transform: translate(-15%, 0)
     }
+
     90% {
         transform: translate(10%, 5%)
     }
+
     100% {
         transform: translate(5%, 0)
     }
@@ -719,6 +731,7 @@ body {
 }
 
 @media only screen and (max-width:600px) {
+
     .img1,
     .img2,
     .img3,
@@ -728,79 +741,96 @@ body {
         max-height: 250px;
         background-position: center;
     }
+
     .img1 {
         background: url('../images/umbrellas_colorful_kids_mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
     .img2 {
         background: url('../images/brain-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
     .img3 {
         background: url('../images/memes-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
     .img4 {
         background: url('../images/dice-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
     .img5 {
         background: url('../images/aye-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
+
     .img-container {
         background: url('../images/brain-desktop-mobile.png');
         background-position: center;
         object-fit: contain;
     }
+
     .img-container-weather {
         background: url('../images/umbrellas_colorful_desktop-mobile.png');
         background-position: center;
         object-fit: cover;
     }
+
     .img-container-memes {
         background: url('../images/memes-desktop-mobile.png');
         background-position: center;
         object-fit: cover;
     }
+
     .img-container-tenzi {
         background: url('../images/dice-desktop-mobile.png');
         background-position: center;
         object-fit: cover;
     }
+
     .bg-1,
     .bg-2,
     .bg-3 {
         width: 150px;
         height: 150px;
     }
+
     .heading div {
         font-size: 40px;
     }
+
     .linkNav,
     .linkNav2 {
         font-size: 17px;
         position: absolute;
     }
+
     .circle {
         width: 200px;
         height: 200px;
     }
+
     .circleText span {
         transform-origin: 0 100px;
     }
+
     .circle-container {
         margin-top: 42vh;
     }
+
     .logo {
         width: 150px;
         height: 150px;
     }
+
     .img-cont-main {
         margin-bottom: 2vh;
     }
