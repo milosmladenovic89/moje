@@ -226,14 +226,14 @@ function SectionHrRightToLeft({ children }) {
 }
 
 
-function SectionHrHalf({ children }) {
+function SectionSpan({ children }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   return (
-    <section className='animeHr-half-left' ref={ref}>
+    <section className='halfSpan' ref={ref}>
       <span
         style={{
-          width: isInView ? '50vw' : '0vw',
+          width: isInView ? '100%' : '0%',
           transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
         }}
       >
@@ -243,14 +243,15 @@ function SectionHrHalf({ children }) {
   )
 }
 
-function SectionHrHalfRight({ children }) {
+function SectionSpan2({ children }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   return (
-    <section className='animeHr-half-right' ref={ref}>
+    <section className='halfSpan2' ref={ref}>
       <span
         style={{
-          width: isInView ? '50vw' : '0vw',
+          transformOrigin: "right",
+          width: isInView ? '100%' : '0%',
           transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
         }}
       >
@@ -259,6 +260,43 @@ function SectionHrHalfRight({ children }) {
     </section>
   )
 }
+function SectionSpanBottom({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='halfSpanBottom' ref={ref}>
+      <span
+        style={{
+          transformOrigin: "right",
+          width: isInView ? '100%' : '0%',
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
+function SectionSpanBottom2({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='halfSpanBottom2' ref={ref}>
+      <span
+        style={{
+          transformOrigin: "right",
+          width: isInView ? '100%' : '0%',
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  )
+}
+
+
+
 
 function SectionHover({ children }) {
   const ref = useRef(null)
@@ -267,9 +305,115 @@ function SectionHover({ children }) {
     <section className='animeHover' ref={ref}>
       <span
         style={{
-          //  opacity: isInView ? 1 : 0,
+
           visibility: isInView ? "visible" : "hidden",
           transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 2s',
+        }}
+      >
+        {children}
+      </span>
+    </section >
+  )
+}
+function SectionProjects({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeProjects' ref={ref}>
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateX(0)' : 'translateX(-500px)',
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
+        }}
+      >
+        {children}
+      </span>
+    </section >
+  )
+}
+function SectionProjects2({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeProjects' ref={ref}>
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateX(0)' : 'translateX(500px)',
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
+        }}
+      >
+        {children}
+      </span>
+    </section >
+  )
+}
+function SectionProjects3({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeProjects' ref={ref}>
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateY(0)' : 'translateY(500px)',
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
+        }}
+      >
+        {children}
+      </span>
+    </section >
+  )
+}
+function SectionProjects4({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeProjects' ref={ref}>
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateY(0)' : 'translateY(-500px)',
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
+        }}
+      >
+        {children}
+      </span>
+    </section >
+  )
+}
+
+function SectionProjects5({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeProjects' ref={ref}>
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateY(0) translateX(0)' : 'translateY(200px) translateX(200px)',
+        
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s',
+        }}
+      >
+        {children}
+      </span>
+    </section >
+  )
+}
+
+function SectionProjects6({ children }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  return (
+    <section className='animeProjects' ref={ref}>
+      <span
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateY(0) translateX(0)' : 'translateY(-200px) translateX(-200px)',
+         
+          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s',
         }}
       >
         {children}
@@ -408,14 +552,16 @@ export default function Homepage() {
 
 
 
-          <div className='hr-container-flex'>
-            <SectionHrHalf>
-              <span className='span-half1'></span>
-            </SectionHrHalf>
+          <div className='two-spans'>
 
-            <SectionHrHalfRight>
-              <span className='span-half2'></span>
-            </SectionHrHalfRight>
+            <SectionSpan>
+              <span className='span1'></span>
+            </SectionSpan>
+
+            <SectionSpan2>
+              <span className='span2'></span>
+            </SectionSpan2>
+
           </div>
 
 
@@ -423,9 +569,39 @@ export default function Homepage() {
 
 
           <div className='hr-container'>
-            <SectionText2>
-              <span>Projects</span>
-            </SectionText2>
+
+            <SectionProjects>
+              <span className='projects'>P</span>
+            </SectionProjects>
+
+            <SectionProjects3>
+              <span className='projects'>R</span>
+            </SectionProjects3>
+
+            <SectionProjects4>
+              <span className='projects'>O</span>
+            </SectionProjects4>
+
+            <SectionProjects5>
+              <span className='projects'>J</span>
+            </SectionProjects5>
+
+            <SectionProjects6>
+              <span className='projects'>E</span>
+            </SectionProjects6>
+
+            <SectionProjects4>
+              <span className='projects'>C</span>
+            </SectionProjects4>
+
+            <SectionProjects3>
+              <span className='projects'>T</span>
+            </SectionProjects3>
+
+            <SectionProjects2>
+              <span className='projects'>S</span>
+            </SectionProjects2>
+
             <SectionHr>
               <hr className='hr' />
             </SectionHr>
@@ -782,14 +958,16 @@ export default function Homepage() {
             </SectionText3Left>
           )}
 
-          <div className='hr-container-flex'>
-            <SectionHrHalf>
-              <span className='span-half1'></span>
-            </SectionHrHalf>
+          <div className='two-spans'>
 
-            <SectionHrHalfRight>
-              <span className='span-half2'></span>
-            </SectionHrHalfRight>
+            <SectionSpanBottom>
+              <span className='span3'></span>
+            </SectionSpanBottom>
+
+
+            <SectionSpanBottom2>
+              <span className='span4'></span>
+            </SectionSpanBottom2>
           </div>
 
 

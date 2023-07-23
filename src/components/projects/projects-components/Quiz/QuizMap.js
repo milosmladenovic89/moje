@@ -30,7 +30,7 @@ export default function QuizMap(props) {
 
             <h2>{props.question}</h2>
 
-            {props.time === 0 && <small style={{ backgroundColor: sum !== 0 ? "white" : "red" }}>This answer gives {sum} points.</small>}
+            {props.time === 0 && <small style={{ backgroundColor: sum !== 0 ? "white" : "red" }}>This answer is {sum !== 0 ? "Correct" : "Wrong"}!</small>}
             {(props.time === 0) && <p className="answer">Correct answer : {props.answer}</p>}
             <input disabled={props.time === 0} onChange={inputValue} type={"radio"} id={props.answers1} value={value} name={props.name} />
             <label htmlFor={props.answers1}>{props.answers1}</label> <br />

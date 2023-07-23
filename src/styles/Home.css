@@ -29,6 +29,7 @@ body {
 .hr-container {
     width: 80vw;
     margin: 5vh auto;
+    text-align: center;
 }
 
 .animeHr {
@@ -46,7 +47,66 @@ body {
 
 .hr-container-flex {
     display: flex;
+}
+
+.two-spans {
+    display: flex;
     justify-content: space-between;
+}
+
+.halfSpan {
+    display: flex;
+    width: 50vw;
+}
+
+.halfSpan2 {
+    display: flex;
+    width: 50vw;
+    justify-content: right;
+}
+
+.span1 {
+    display: inline-block;
+    /*background: url('../images/panorama.jpg');*/
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to right, #cbb4d4, #060008);
+}
+
+.span2 {
+    display: inline-block;
+    height: 150px;
+    width: 100%;
+    background: linear-gradient(to right, #060008, #cbb4d4);
+}
+
+.span3 {
+    display: inline-block;
+    border-top: 150px solid red;
+    width: 100%;
+    height: 150px;
+}
+
+.projects {
+    font-size: 50px;
+}
+
+.span4 {
+    display: inline-block;
+    background: url('../images/panorama2.jpg');
+    height: 150px;
+    width: 100%;
+}
+
+.halfSpanBottom {
+    display: flex;
+    width: 50vw;
+    justify-content: right;
+}
+
+.halfSpanBottom2 {
+    display: flex;
+    width: 50vw;
 }
 
 .animeHr-half-left {
@@ -57,28 +117,6 @@ body {
 .animeHr-half-right {
     display: flex;
     justify-content: right;
-}
-
-.span-half1 {
-    display: inline-block;
-    text-align: left;
-    padding-left: 20px;
-    /*  background-position: center !important;*/
-    /*background-repeat: no-repeat !important;*/
-    background-size: cover !important;
-
-    width: 100%;
-    background: url('../images/panorama.jpg');
-    padding-bottom: 150px;
-}
-
-.span-half2 {
-    display: inline-block;
-    text-align: right;
-    padding-right: 20px;
-    width: 100%;
-    background-color: blue;
-    padding-bottom: 150px;
 }
 
 .noise {
@@ -432,43 +470,33 @@ body {
     0% {
         transform: translate(0, 0)
     }
-
     10% {
         transform: translate(-5%, -5%)
     }
-
     20% {
         transform: translate(-10%, 5%)
     }
-
     30% {
         transform: translate(5%, -10%)
     }
-
     40% {
         transform: translate(-5%, 15%)
     }
-
     50% {
         transform: translate(-10%, 5%)
     }
-
     60% {
         transform: translate(15%, 0)
     }
-
     70% {
         transform: translate(0, 10%)
     }
-
     80% {
         transform: translate(-15%, 0)
     }
-
     90% {
         transform: translate(10%, 5%)
     }
-
     100% {
         transform: translate(5%, 0)
     }
@@ -652,6 +680,10 @@ body {
     width: 350%;
 }
 
+.animeProjects {
+    display: inline-flex;
+}
+
 .animeDescription {
     display: flex;
 }
@@ -728,10 +760,10 @@ body {
     text-decoration: none;
     color: black;
     z-index: 1000;
+    padding-left: 20px;
 }
 
 @media only screen and (max-width:600px) {
-
     .img1,
     .img2,
     .img3,
@@ -741,96 +773,79 @@ body {
         max-height: 250px;
         background-position: center;
     }
-
     .img1 {
         background: url('../images/umbrellas_colorful_kids_mobile.jpg');
         background-position: center;
         background-size: cover;
     }
-
     .img2 {
         background: url('../images/brain-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
-
     .img3 {
         background: url('../images/memes-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
-
     .img4 {
         background: url('../images/dice-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
-
     .img5 {
         background: url('../images/aye-mobile.jpg');
         background-position: center;
         background-size: cover;
     }
-
     .img-container {
         background: url('../images/brain-desktop-mobile.png');
         background-position: center;
         object-fit: contain;
     }
-
     .img-container-weather {
         background: url('../images/umbrellas_colorful_desktop-mobile.png');
         background-position: center;
         object-fit: cover;
     }
-
     .img-container-memes {
         background: url('../images/memes-desktop-mobile.png');
         background-position: center;
         object-fit: cover;
     }
-
     .img-container-tenzi {
         background: url('../images/dice-desktop-mobile.png');
         background-position: center;
         object-fit: cover;
     }
-
     .bg-1,
     .bg-2,
     .bg-3 {
         width: 150px;
         height: 150px;
     }
-
     .heading div {
         font-size: 40px;
     }
-
     .linkNav,
     .linkNav2 {
         font-size: 17px;
         position: absolute;
     }
-
     .circle {
         width: 200px;
         height: 200px;
     }
-
     .circleText span {
         transform-origin: 0 100px;
     }
-
     .circle-container {
         margin-top: 42vh;
     }
-
     .logo {
         width: 150px;
         height: 150px;
     }
-
     .img-cont-main {
         margin-bottom: 2vh;
     }
