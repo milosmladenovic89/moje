@@ -21,6 +21,24 @@ export function SectionText({ children }) {
     )
 }
 
+export function SectionTextArrow({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animeYea">
+            <span
+                style={{
+                    transform: isInView ? 'scale(1)' : 'scale(0)',
+                 
+                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
+
 export function SectionText3({ children }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })

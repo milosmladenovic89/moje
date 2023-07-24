@@ -6,7 +6,8 @@ import { HashLink } from 'react-router-hash-link'
 import {
   SectionText, SectionText3, SectionText3MobileLeft, SectionText3MobileRight, SectionSpanBottom,
   SectionText3Left, SectionImage, SectionImg2, SectionHr, SectionHrRightToLeft, SectionSpan, SectionSpan2,
-  SectionSpanBottom2, SectionHover, SectionProjects, SectionProjects2, SectionProjects3, SectionProjects4, SectionProjects5, SectionProjects6
+  SectionSpanBottom2, SectionHover, SectionProjects, SectionProjects2, SectionProjects3, SectionProjects4,
+  SectionProjects5, SectionProjects6, SectionTextArrow
 } from './HomeFunctions'
 
 
@@ -17,7 +18,10 @@ export default function Homepage() {
   const [hover, setHover] = useState(false)
   const [hover2, setHover2] = useState(false)
   const [hoverCircle, setHoverCircle] = useState(false)
-
+  const [hoverArrow, setHoverArrow] = useState(false)
+  const [class_1, setClass_1] = useState("")
+  const [class_2, setClass_2] = useState("")
+  const [class_3, setClass_3] = useState("")
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,6 +38,19 @@ export default function Homepage() {
       clearInterval(interval)
     }
   }, [img])
+
+  useEffect(() => {
+    const time = setTimeout(() => {
+      setClass_1("first-letter")
+      setClass_2('first-letter2')
+      setClass_3('first-letter3')
+    }, 1500);
+
+    return () => {
+      clearTimeout(time)
+    }
+  }, [])
+
 
   useEffect(() => {
     const mobileWidth = () => {
@@ -65,6 +82,14 @@ export default function Homepage() {
   function onOutCircle() {
     setHoverCircle(false)
   }
+  function hoverBigArrow() {
+    setHoverArrow(true)
+    console.log("Hovered");
+  }
+  function hoverOutBigArrow() {
+    setHoverArrow(false)
+    console.log("Hovered out");
+  }
 
   let text = 'Milos Mladenovic - Frontend Developer'.split('')
   return (
@@ -80,8 +105,8 @@ export default function Homepage() {
             <div></div>
 
             <div>
-              <span>
-                <Link className="linkNav" to="/about">
+              <span >
+                <Link className="linkNav" to="/about" >
                   About
                 </Link>
               </span>
@@ -96,40 +121,60 @@ export default function Homepage() {
           <div className="heading">
             <div className={hoverCircle ? "text-transparent" : "fonts"} >
               <SectionText>
-                <div style={{ position: 'absolute', top: '20%' }}>
+                <div className={`${class_1}`} style={{ position: 'absolute', top: '20%', color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black" }}>
+
                   FREELANCE
                 </div>
               </SectionText>
+
               <SectionText>
-                <div style={{ position: 'absolute', top: '30%' }}>FRONTEND</div>
+                <div className={`${class_2}`} style={{ position: 'absolute', top: '30%', color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black", }}>FRONTEND</div>
               </SectionText>
+
               <SectionText>
-                <div style={{ position: 'absolute', top: '40%' }}>
+
+                <div className={`${class_3}`} style={{ position: 'absolute', top: '40%', color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black", }}  >
                   DEVELOPER
                 </div>
               </SectionText>
+
               <SectionText>
                 <div
                   className="text-transparent"
-                  style={{ position: 'absolute', top: '50%' }}
+                  style={{ position: 'absolute', top: '50%', color: hoverArrow ? "white" : "transparent", }}
                 >
                   BASED IN
                 </div>
               </SectionText>
               <SectionText>
+
                 <div
+
                   className="text-transparent"
-                  style={{ position: 'absolute', top: '60%' }}
+                  style={{ position: 'absolute', top: '60%', color: hoverArrow ? "white" : "transparent", }}
                 >
                   SERBIA
+
                 </div>
+
               </SectionText>
+
+
+              <HashLink to={"#arrowHash"}>
+                <div className='arrow-down-large-father' onMouseOver={hoverBigArrow} onMouseOut={hoverOutBigArrow}>
+                  <SectionTextArrow >
+                    <i className="icono-arrow1-left-down" style={{ color: hoverArrow ? "white" : "black" }} ></i>
+                  </SectionTextArrow>
+                </div>
+              </HashLink>
+
+
             </div>
 
             <SectionImage>
               <div className="circle-container" onMouseOver={onCircle} onMouseOut={onOutCircle}>
                 <div className="circle">
-                  <p className="circleText" style={{color:hoverCircle?"white":"black",transition:"1.3s ease"}}>
+                  <p className="circleText" style={{ color: hoverCircle || hoverArrow ? "white" : "black", transition: "1.3s ease" }}>
                     {text.map((item, index) => (
                       <span
                         style={{ transform: `rotate(${index * 9.6}deg)` }}
@@ -155,7 +200,7 @@ export default function Homepage() {
             </SectionSpan>
 
             <SectionSpan2>
-              <span className='span2'></span>
+              <span id="arrowHash" className='span2'></span>
             </SectionSpan2>
 
           </div>
