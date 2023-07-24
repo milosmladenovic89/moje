@@ -1,432 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { AnimatePresence, motion, useInView } from 'framer-motion'
+import React, { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import '../../styles/Home.css'
 import { HashLink } from 'react-router-hash-link'
+import {
+  SectionText, SectionText3, SectionText3MobileLeft, SectionText3MobileRight, SectionSpanBottom,
+  SectionText3Left, SectionImage, SectionImg2, SectionHr, SectionHrRightToLeft, SectionSpan, SectionSpan2,
+  SectionSpanBottom2, SectionHover, SectionProjects, SectionProjects2, SectionProjects3, SectionProjects4, SectionProjects5, SectionProjects6
+} from './HomeFunctions'
 
 
-function SectionText({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section ref={ref} className="anime2">
-      <span
-        style={{
-          lineHeight: isInView ? 1 : 0,
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-function SectionText3({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section ref={ref} className="anime22">
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateX(0)' : 'translateX(-200px)',
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-
-function SectionText3MobileLeft({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { amount: 1 })
-  return (
-    <section ref={ref} className="anime-left">
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateX(0)' : 'translateX(-200px)',
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-
-function SectionText3MobileRight({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { amount: 1 })
-  return (
-    <section ref={ref} className="anime-right">
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateX(0)' : 'translateX(200px)',
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-
-
-
-function SectionText3Left({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section ref={ref} className="anime22-left">
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-
-          transform: isInView ? 'translateX(0)' : 'translateX(200px)',
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-function SectionText2({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className="animeTextCenter" ref={ref}>
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateX(0)' : 'translateX(1000px)',
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-function SectionImage({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-  return (
-    <section ref={ref} className="animeImage">
-      <span
-
-        style={{
-          transform: isInView ? 'scale(1)' : 'scale(0)',
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-function SectionImg2({ children }) {
-
-  const [mobile, setMobile] = useState(window.innerWidth)
-
-  useEffect(() => {
-    const mobileWidth = () => {
-      setMobile(window.innerWidth)
-    }
-    window.addEventListener('resize', mobileWidth)
-
-    return () => {
-      window.removeEventListener('resize', mobileWidth)
-    }
-  }, [])
-
-
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section ref={ref} className="animeImage2">
-      <span
-
-        style={{
-          transform: 'translate(-50%, -50%)',
-          top: '50%',
-          left: '50%',
-          width:
-            mobile > 600
-              ? isInView
-                ? '50vw'
-                : '10vw'
-              : mobile < 600 && isInView
-                ? '80vw'
-                : '30vw',
-          height:
-            mobile > 600
-              ? isInView
-                ? '55vh'
-                : '20vh'
-              : mobile < 600 && isInView
-                ? '20vh'
-                : '10vh',
-          zIndex: 999,
-          transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-function SectionHr({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='animeHr' ref={ref}>
-      <span
-        style={{
-          transformOrigin: "0%",
-          width: isInView ? '100%' : '0%',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-function SectionHrRightToLeft({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='animeHr-right' ref={ref}>
-      <span
-        style={{
-          transformOrigin: "0%",
-          width: isInView ? '100%' : '0%',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-
-function SectionSpan({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='halfSpan' ref={ref}>
-      <span
-        style={{
-          width: isInView ? '100%' : '0%',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-function SectionSpan2({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='halfSpan2' ref={ref}>
-      <span
-        style={{
-          transformOrigin: "right",
-          width: isInView ? '100%' : '0%',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-function SectionSpanBottom({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='halfSpanBottom' ref={ref}>
-      <span
-        style={{
-          transformOrigin: "right",
-          width: isInView ? '100%' : '0%',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-function SectionSpanBottom2({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='halfSpanBottom2' ref={ref}>
-      <span
-        style={{
-          transformOrigin: "right",
-          width: isInView ? '100%' : '0%',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  )
-}
-
-
-
-
-function SectionHover({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='animeHover' ref={ref}>
-      <span
-        style={{
-
-          visibility: isInView ? "visible" : "hidden",
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 2s',
-        }}
-      >
-        {children}
-      </span>
-    </section >
-  )
-}
-function SectionProjects({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='animeProjects' ref={ref}>
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateX(0)' : 'translateX(-500px)',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
-        }}
-      >
-        {children}
-      </span>
-    </section >
-  )
-}
-function SectionProjects2({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='animeProjects' ref={ref}>
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateX(0)' : 'translateX(500px)',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
-        }}
-      >
-        {children}
-      </span>
-    </section >
-  )
-}
-function SectionProjects3({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='animeProjects' ref={ref}>
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateY(0)' : 'translateY(500px)',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
-        }}
-      >
-        {children}
-      </span>
-    </section >
-  )
-}
-function SectionProjects4({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='animeProjects' ref={ref}>
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateY(0)' : 'translateY(-500px)',
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
-        }}
-      >
-        {children}
-      </span>
-    </section >
-  )
-}
-
-function SectionProjects5({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='animeProjects' ref={ref}>
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateY(0) translateX(0)' : 'translateY(200px) translateX(200px)',
-        
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s',
-        }}
-      >
-        {children}
-      </span>
-    </section >
-  )
-}
-
-function SectionProjects6({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  return (
-    <section className='animeProjects' ref={ref}>
-      <span
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateY(0) translateX(0)' : 'translateY(-200px) translateX(-200px)',
-         
-          transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s',
-        }}
-      >
-        {children}
-      </span>
-    </section >
-  )
-}
 
 export default function Homepage() {
   const [mobile, setMobile] = useState(window.innerWidth)
   const [img, setImg] = useState('bg-1')
   const [hover, setHover] = useState(false)
   const [hover2, setHover2] = useState(false)
+  const [hoverCircle, setHoverCircle] = useState(false)
 
 
   useEffect(() => {
@@ -469,6 +59,12 @@ export default function Homepage() {
   function changeHover4() {
     setHover2(false)
   }
+  function onCircle() {
+    setHoverCircle(true)
+  }
+  function onOutCircle() {
+    setHoverCircle(false)
+  }
 
   let text = 'Milos Mladenovic - Frontend Developer'.split('')
   return (
@@ -498,7 +94,7 @@ export default function Homepage() {
           </div>
 
           <div className="heading">
-            <div className="fonts">
+            <div className={hoverCircle ? "text-transparent" : "fonts"} >
               <SectionText>
                 <div style={{ position: 'absolute', top: '20%' }}>
                   FREELANCE
@@ -517,7 +113,7 @@ export default function Homepage() {
                   className="text-transparent"
                   style={{ position: 'absolute', top: '50%' }}
                 >
-                  BASED IN{' '}
+                  BASED IN
                 </div>
               </SectionText>
               <SectionText>
@@ -531,9 +127,9 @@ export default function Homepage() {
             </div>
 
             <SectionImage>
-              <div className="circle-container">
+              <div className="circle-container" onMouseOver={onCircle} onMouseOut={onOutCircle}>
                 <div className="circle">
-                  <p className="circleText">
+                  <p className="circleText" style={{color:hoverCircle?"white":"black",transition:"1.3s ease"}}>
                     {text.map((item, index) => (
                       <span
                         style={{ transform: `rotate(${index * 9.6}deg)` }}
