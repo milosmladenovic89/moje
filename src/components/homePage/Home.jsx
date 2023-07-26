@@ -30,7 +30,15 @@ export default function Homepage() {
       } else if (img === 'bg-2') {
         setImg('bg-3')
       } else if (img === 'bg-3') {
-        setImg("bg-1")
+        setImg("bg-4")
+      } else if (img === 'bg-4') {
+        setImg('bg-5')
+      } else if (img === 'bg-5') {
+        setImg('bg-6')
+      } else if (img === 'bg-6') {
+        setImg('bg-7')
+      } else if (img === 'bg-7') {
+        setImg('bg-1')
       }
     }, 5000);
 
@@ -122,7 +130,6 @@ export default function Homepage() {
             <div className={hoverCircle ? "text-transparent" : "fonts"} >
               <SectionText>
                 <div className={`${class_1}`} style={{ position: 'absolute', top: '20%', color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black" }}>
-
                   FREELANCE
                 </div>
               </SectionText>
@@ -149,12 +156,10 @@ export default function Homepage() {
               <SectionText>
 
                 <div
-
                   className="text-transparent"
                   style={{ position: 'absolute', top: '60%', color: hoverArrow ? "white" : "transparent", }}
                 >
                   SERBIA
-
                 </div>
 
               </SectionText>
@@ -163,7 +168,7 @@ export default function Homepage() {
               <HashLink to={"#arrowHash"}>
                 <div className='arrow-down-large-father' onMouseOver={hoverBigArrow} onMouseOut={hoverOutBigArrow}>
                   <SectionTextArrow >
-                    <i className="icono-arrow1-left-down" style={{ color: hoverArrow ? "white" : "black" }} ></i>
+                    <i className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }} ></i>
                   </SectionTextArrow>
                 </div>
               </HashLink>
@@ -193,14 +198,14 @@ export default function Homepage() {
 
 
 
-          <div className='two-spans'>
+          <div className='two-spans'  id="arrowHash">
 
             <SectionSpan>
               <span className='span1'></span>
             </SectionSpan>
 
             <SectionSpan2>
-              <span id="arrowHash" className='span2'></span>
+              <span className='span2'></span>
             </SectionSpan2>
 
           </div>

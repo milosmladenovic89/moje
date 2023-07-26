@@ -404,7 +404,7 @@
         position: absolute;
         width: 300px;
         height: 300px;
-        background: url('../images/m6.jpg');
+        background: url('../images/React-icon.svg');
         display: flex;
         justify-content: center;
         align-items: center;
@@ -419,7 +419,7 @@
         position: absolute;
         width: 300px;
         height: 300px;
-        background: url('../images/m1.jpg');
+        background: url('../images/css3.svg');
         display: flex;
         justify-content: center;
         align-items: center;
@@ -434,7 +434,7 @@
         position: absolute;
         width: 300px;
         height: 300px;
-        background: url('../images/m17.jpg');
+        background: url('../images/html5.svg');
         display: flex;
         justify-content: center;
         align-items: center;
@@ -444,7 +444,63 @@
         background-size: cover;
         transition: 1s ease-in-out;
     }
-    
+    .bg-4 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: url('../images/ai.svg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: 1s ease-in-out;
+    }
+
+    .bg-5 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: url('../images/github.svg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: 1s ease-in-out;
+    }
+    .bg-6 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: url('../images/ps.svg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: 1s ease-in-out;
+    }
+    .bg-7 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: url('../images/logo-javascript.svg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: 1s ease-in-out;
+    }
     @keyframes rotateText {
         0% {
             transform: rotate(360deg);
@@ -911,7 +967,11 @@
         }
         .bg-1,
         .bg-2,
-        .bg-3 {
+        .bg-3,
+        .bg-4,
+        .bg-5,
+        .bg-6,
+        .bg-7 {
             width: 150px;
             height: 150px;
         }
