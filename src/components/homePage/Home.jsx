@@ -163,7 +163,7 @@ export default function Homepage() {
               <HashLink to={"#arrowHash"}>
                 <div className='arrow-down-large-father' onMouseOver={hoverBigArrow} onMouseOut={hoverOutBigArrow}>
                   <SectionTextArrow >
-                    <i className="icono-arrow1-left-down" style={{ color: hoverArrow ? "white" : "black" }} ></i>
+                    <i className="icono-arrow1-left-down" style={{ color: hoverArrow ||hoverCircle ? "white" : "black" }} ></i>
                   </SectionTextArrow>
                 </div>
               </HashLink>

@@ -404,7 +404,7 @@
         position: absolute;
         width: 300px;
         height: 300px;
-        background: url('../images/m6.jpg');
+        background: url('../images/html.png');
         display: flex;
         justify-content: center;
         align-items: center;
@@ -419,14 +419,14 @@
         position: absolute;
         width: 300px;
         height: 300px;
-        background: url('../images/m1.jpg');
+        background: url('../images/css-3.png');
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 50%;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         transition: 1s ease-in-out;
     }
     
@@ -434,7 +434,7 @@
         position: absolute;
         width: 300px;
         height: 300px;
-        background: url('../images/m17.jpg');
+        background: url('../images/illustrator.png');
         display: flex;
         justify-content: center;
         align-items: center;
