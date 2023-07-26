@@ -163,8 +163,6 @@ export default function Homepage() {
                 </div>
 
               </SectionText>
-
-
               <HashLink to={"#arrowHash"}>
                 <div className='arrow-down-large-father' onMouseOver={hoverBigArrow} onMouseOut={hoverOutBigArrow}>
                   <SectionTextArrow >
