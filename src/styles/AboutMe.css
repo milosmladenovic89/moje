@@ -34,7 +34,6 @@
     text-decoration: none;
     color: grey;
     font-size: 20px;
-
 }
 
 .link-nav2 {
@@ -46,14 +45,22 @@
     font-size: 20px;
 }
 
+.word {
+    margin: auto;
+    font: 700 normal 2.5em 'tahoma';
+    text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+
+.animated-text {
+    padding-left: 50px;
+}
 
 @media only screen and (max-width:600px) {
-
     .link-nav {
         right: 25%;
     }
-    .link-nav,.link-nav2{
+    .link-nav,
+    .link-nav2 {
         font-size: 17px;
     }
-
 }

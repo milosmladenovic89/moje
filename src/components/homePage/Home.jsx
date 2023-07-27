@@ -108,6 +108,7 @@ export default function Homepage() {
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
           className="after"
+
         >
           <div className="nav-container">
             <div></div>
@@ -196,9 +197,9 @@ export default function Homepage() {
 
 
 
-          <div className='two-spans'  id="arrowHash">
+          <div className='two-spans' id="arrowHash" >
 
-            <SectionSpan>
+            <SectionSpan >
               <span className='span1'></span>
             </SectionSpan>
 
@@ -212,7 +213,7 @@ export default function Homepage() {
 
 
 
-          <div className='hr-container'>
+          <div className='hr-container' >
 
             <SectionProjects>
               <span className='projects'>P</span>
@@ -617,9 +618,12 @@ export default function Homepage() {
 
 
 
-          <footer style={{ display: "flex", justifyContent: "space-between", padding: "20px" }}>
-
+          <footer style={{ display: "flex", width: "80vw", margin: "0 auto", justifyContent: "space-between", padding: "40px" }}>
+            <div style={{zIndex: 10000,}}>
             <a className='linkedin-link' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
+            <span className='linkedin-link'>Email</span>
+            </div>
+           
             <HashLink className='hashLink' to={"#main"}>Back to top ⇧</HashLink>
 
           </footer>

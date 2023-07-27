@@ -29,6 +29,7 @@
     .hr-container {
         width: 80vw;
         margin: 5vh auto;
+        margin-top: 25vh;
         text-align: center;
     }
     
@@ -67,24 +68,23 @@
     
     .span1 {
         display: inline-block;
-        /*background: url('../images/panorama.jpg');*/
         width: 100%;
-        height: 250px;
+        height: 2px;
         background: linear-gradient(to right, #cbb4d4, #060008);
     }
     
     .span2 {
         display: inline-block;
-        height: 250px;
+        height: 2px;
         width: 100%;
         background: linear-gradient(to right, #060008, #cbb4d4);
     }
     
     .span3 {
         display: inline-block;
-        border-top: 150px solid red;
+        background: linear-gradient(to right, #cbb4d4, #060008);
         width: 100%;
-        height: 150px;
+        height: 2px;
     }
     
     .projects {
@@ -93,8 +93,8 @@
     
     .span4 {
         display: inline-block;
-        background: url('../images/panorama2.jpg');
-        height: 150px;
+        background: linear-gradient(to right, #060008, #cbb4d4);
+        height: 2px;
         width: 100%;
     }
     
@@ -444,6 +444,7 @@
         background-size: cover;
         transition: 1s ease-in-out;
     }
+    
     .bg-4 {
         position: absolute;
         width: 300px;
@@ -458,7 +459,7 @@
         background-size: cover;
         transition: 1s ease-in-out;
     }
-
+    
     .bg-5 {
         position: absolute;
         width: 300px;
@@ -473,6 +474,7 @@
         background-size: cover;
         transition: 1s ease-in-out;
     }
+    
     .bg-6 {
         position: absolute;
         width: 300px;
@@ -487,6 +489,7 @@
         background-size: cover;
         transition: 1s ease-in-out;
     }
+    
     .bg-7 {
         position: absolute;
         width: 300px;
@@ -501,6 +504,7 @@
         background-size: cover;
         transition: 1s ease-in-out;
     }
+    
     @keyframes rotateText {
         0% {
             transform: rotate(360deg);

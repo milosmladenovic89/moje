@@ -255,7 +255,7 @@ export function SectionSpan2({ children }) {
 
 export function SectionSpanBottom({ children }) {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
+    const isInView = useInView(ref, { amount: 1 })
     return (
         <section className='halfSpanBottom' ref={ref}>
             <span
@@ -273,7 +273,7 @@ export function SectionSpanBottom({ children }) {
 
 export function SectionSpanBottom2({ children }) {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
+    const isInView = useInView(ref, { amount: 1 })
     return (
         <section className='halfSpanBottom2' ref={ref}>
             <span
