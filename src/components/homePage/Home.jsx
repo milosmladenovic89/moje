@@ -160,15 +160,15 @@ export default function Homepage() {
                   className="text-transparent"
                   style={{ position: 'absolute', top: '60%', color: hoverArrow ? "white" : "transparent", }}
                 >
-                  SERBIA
+                  SERBIA <SectionTextArrow >
+                    <i className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }} ></i>
+                  </SectionTextArrow>
                 </div>
 
               </SectionText>
               <HashLink to={"#arrowHash"}>
                 <div className='arrow-down-large-father' onMouseOver={hoverBigArrow} onMouseOut={hoverOutBigArrow}>
-                  <SectionTextArrow >
-                    <i className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }} ></i>
-                  </SectionTextArrow>
+
                 </div>
               </HashLink>
 
@@ -193,8 +193,6 @@ export default function Homepage() {
               </div>
             </SectionImage>
           </div>
-
-
 
 
           <div className='two-spans' id="arrowHash" >
@@ -618,12 +616,13 @@ export default function Homepage() {
 
 
 
-          <footer style={{ display: "flex", width: "80vw", margin: "0 auto", justifyContent: "space-between", padding: "40px" }}>
-            <div style={{zIndex: 10000,}}>
-            <a className='linkedin-link' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
-            <span className='linkedin-link'>Email</span>
+          <footer id='footer'>
+            <div style={{ zIndex: 10000 }}>
+              <a className='linkedin-link' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
+              <a className='linkedin-link' href="mailto:milos89mladenovic@gmail.com">Email</a>
+              <Link className='linkedin-link' to='/MilosMladenovic_CV.pdf' target="_blank"> Curriculum Vitae</Link>
             </div>
-           
+
             <HashLink className='hashLink' to={"#main"}>Back to top ⇧</HashLink>
 
           </footer>
