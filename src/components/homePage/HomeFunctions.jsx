@@ -218,6 +218,23 @@ export function SectionHrRightToLeft({ children }) {
     )
 }
 
+export function SectionHrLast({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section className='animeHr-last' ref={ref}>
+            <span
+                style={{
+                    transformOrigin: "0%",
+                    width: isInView ? '100%' : '0%',
+                    transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
 export function SectionSpan({ children }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { amount: 1 })

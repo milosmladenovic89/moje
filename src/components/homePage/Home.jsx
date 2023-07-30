@@ -7,7 +7,7 @@ import {
   SectionText, SectionText3, SectionText3MobileLeft, SectionText3MobileRight, SectionSpanBottom,
   SectionText3Left, SectionImage, SectionImg2, SectionHr, SectionHrRightToLeft, SectionSpan, SectionSpan2,
   SectionSpanBottom2, SectionHover, SectionProjects, SectionProjects2, SectionProjects3, SectionProjects4,
-  SectionProjects5, SectionProjects6, SectionTextArrow
+  SectionProjects5, SectionProjects6, SectionTextArrow, SectionHrLast
 } from './HomeFunctions'
 
 
@@ -17,8 +17,13 @@ export default function Homepage() {
   const [img, setImg] = useState('bg-1')
   const [hover, setHover] = useState(false)
   const [hover2, setHover2] = useState(false)
+  const [hoverText, setHoverText] = useState(false)
+  const [hoverText2, setHoverText2] = useState(false)
+  const [hoverText3, setHoverText3] = useState(false)
   const [hoverCircle, setHoverCircle] = useState(false)
   const [hoverArrow, setHoverArrow] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: -120, y: -120 })
+  const [timer, setTimer] = useState(false)
   const [class_1, setClass_1] = useState("")
   const [class_2, setClass_2] = useState("")
   const [class_3, setClass_3] = useState("")
@@ -61,6 +66,16 @@ export default function Homepage() {
 
 
   useEffect(() => {
+    const time = setTimeout(() => {
+      setTimer(true)
+    }, 1500);
+
+    return () => {
+      clearTimeout(time)
+    }
+  }, [])
+
+  useEffect(() => {
     const mobileWidth = () => {
       setMobile(window.innerWidth)
     }
@@ -92,12 +107,40 @@ export default function Homepage() {
   }
   function hoverBigArrow() {
     setHoverArrow(true)
-    console.log("Hovered");
+
   }
   function hoverOutBigArrow() {
     setHoverArrow(false)
-    console.log("Hovered out");
   }
+  function hoveredText() {
+    setHoverText(true)
+  }
+  function hoveredTextOut() {
+    setHoverText(false)
+  }
+  function hoveredText2() {
+    setHoverText2(true)
+  }
+  function hoveredTextOut2() {
+    setHoverText2(false)
+  }
+  function hoveredText3() {
+    setHoverText3(true)
+  }
+  function hoveredTextOut3() {
+    setHoverText3(false)
+  }
+  useEffect(() => {
+    function moveImage(e) {
+      const { pageX, PageY } = e
+      setMousePosition({ x: pageX, y: PageY })
+    }
+    window.addEventListener("mousemove", moveImage)
+
+    return () => {
+      window.removeEventListener("mousemove", moveImage)
+    }
+  }, [])
 
   let text = 'Milos Mladenovic - Frontend Developer'.split('')
   return (
@@ -160,9 +203,10 @@ export default function Homepage() {
                   className="text-transparent"
                   style={{ position: 'absolute', top: '60%', color: hoverArrow ? "white" : "transparent", }}
                 >
-                  SERBIA <SectionTextArrow >
+                  SERBIA
+                  {timer && <SectionTextArrow >
                     <i className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }} ></i>
-                  </SectionTextArrow>
+                  </SectionTextArrow>}
                 </div>
 
               </SectionText>
@@ -601,6 +645,45 @@ export default function Homepage() {
             </SectionText3Left>
           )}
 
+          <div className='hr-container' >
+            <SectionHrLast>
+              <hr className='hr' />
+            </SectionHrLast>
+          </div>
+
+          <div className='show-on-desktop-only'>
+
+            <div className='showOnHover-container'>
+              <p id='para1' className='fonts hovered-paragraph' onMouseOver={hoveredText} onMouseOut={hoveredTextOut}>Lorem ipsum dolor sit amet.
+                <div
+                  style={{ transform: `translateX(${mousePosition.x}px)` }}
+                  className={hoverText ? 'follow-img' : 'follow-img2'} >
+                </div>
+              </p>
+
+
+              <p id='para2' className='fonts hovered-paragraph' onMouseOver={hoveredText2} onMouseOut={hoveredTextOut2}>Lorem ipsum dolor sit amet.
+                <div
+                  style={{ transform: `translateX(${mousePosition.x}px)` }}
+                  className={hoverText2 ? 'follow-img-second' : 'follow-img-second2'} >
+                </div>
+              </p>
+
+
+              <p id='para3' className='fonts hovered-paragraph' onMouseOver={hoveredText3} onMouseOut={hoveredTextOut3}>Lorem ipsum dolor sit amet.
+                <div
+                  style={{ transform: `translateX(${mousePosition.x}px)` }}
+                  className={hoverText3 ? 'follow-img-third' : 'follow-img-third2'} >
+                </div>
+              </p>
+            </div>
+
+          </div>
+
+
+
+
+
           <div className='two-spans'>
 
             <SectionSpanBottom>
@@ -617,10 +700,14 @@ export default function Homepage() {
 
 
           <footer id='footer'>
-            <div style={{ zIndex: 10000 }}>
+            <div className='footer-left-container'>
+
               <a className='linkedin-link' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
-              <a className='linkedin-link' href="mailto:milos89mladenovic@gmail.com">Email</a>
               <Link className='linkedin-link' to='/MilosMladenovic_CV.pdf' target="_blank"> Curriculum Vitae</Link>
+              <a className='linkedin-link' href="mailto:milos89mladenovic@gmail.com">Email</a>
+
+
+
             </div>
 
             <HashLink className='hashLink' to={"#main"}>Back to top ⇧</HashLink>
