@@ -2,14 +2,15 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import '../../styles/AboutMe.css'
-
+import { SectionTextAbout, SectionTextAbout2, SectionTextAbout3 } from './AboutMeFunctions';
 
 export default function AboutMe() {
   const [displayed, updateDisplay] = useState("");
   const refText = useRef()
 
-  const message = " Freelance / Frontend / Developer / Based in / Serbia"
-  let delay = 30
+  const message = " Freelance/ Frontend/ Developer/ Based in/ Serbia"
+
+  let delay = 25
 
 
   useEffect(() => {
@@ -33,6 +34,8 @@ export default function AboutMe() {
       return prevText.concat(message.charAt(prevText.length))
     });
   }
+  /************************************ */
+
 
 
 
@@ -48,7 +51,55 @@ export default function AboutMe() {
         <Link className="link-nav2" to="/" >Home</Link>
       </div>
 
-      <p className="animated-text">{displayed}</p>
+
+
+      <div className='hello-container'>
+
+
+
+
+        <p className='animated-text-container'>
+          <span className="animated-text">{displayed}</span>
+        </p>
+
+        <div className='text-transparent-aboutPage-container'>
+          <motion.p className='hello-text text-transparent-aboutPage'
+            initial={{ x: -450 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.5, delay: 0.5, type: 'spring', damping: 10,
+            mass: 0.75,
+            stiffness: 150, }}
+          >HELLO</motion.p>
+        </div>
+
+
+
+        <SectionTextAbout>
+          <p className='hello-text'>I'M A FREELANCE</p>
+        </SectionTextAbout>
+        <SectionTextAbout2>
+          <p className='hello-text'>FRONTEND</p>
+        </SectionTextAbout2>
+        <SectionTextAbout3>
+          <p className='hello-text'>DEVELOPER</p>
+        </SectionTextAbout3>
+
+        <motion.div className='container-img'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 4, delay: 3.5 }}
+        ></motion.div>
+
+
+      </div>
+
+
+
+
+
+
+
+
 
 
       <div className="noise"></div>

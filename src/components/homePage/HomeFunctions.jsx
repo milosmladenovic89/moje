@@ -1,18 +1,53 @@
 import React, { useState, useRef, useEffect } from 'react'
 import '../../styles/Home.css'
-
-
-
 import { useInView } from 'framer-motion'
-export function SectionText({ children }) {
+
+
+
+export function SectionText0({ children }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
     return (
-        <section ref={ref} className="anime2">
+        <section ref={ref} className="animation-text-firstPage">
             <span
                 style={{
-                    lineHeight: isInView ? 1 : 0,
-                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                    
+                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
+                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
+export function SectionText01({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animation-text-firstPage">
+            <span
+                style={{
+                    
+                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
+                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
+export function SectionText02({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animation-text-firstPage">
+            <span
+                style={{
+                    
+                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
+                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
                 {children}
@@ -21,6 +56,41 @@ export function SectionText({ children }) {
     )
 }
 
+export function SectionText03({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animation-text-firstPage">
+            <span
+                style={{
+                    
+                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
+                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
+
+export function SectionText04({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animation-text-firstPage">
+            <span
+                style={{
+                    
+                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
+                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
 export function SectionTextArrow({ children }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
@@ -30,7 +100,7 @@ export function SectionTextArrow({ children }) {
                 style={{
                     transform: isInView ? 'scale(1)' : 'scale(0)',
                  
-                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
+                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
                 }}
             >
                 {children}

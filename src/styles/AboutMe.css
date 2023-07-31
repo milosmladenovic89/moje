@@ -51,8 +51,52 @@
     text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
 }
 
+.animated-text-container {
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.animate-text-aboutPage {
+    display: flex;
+    overflow: hidden;
+}
+
 .animated-text {
-    padding-left: 50px;
+    position: absolute;
+    left: 0;
+}
+
+.hello-container {
+    width: 80vw;
+    margin: 0 auto;
+    padding-top: 5vh;
+    position: relative;
+}
+
+.text-transparent-aboutPage-container {
+    overflow: hidden;
+}
+
+.text-transparent-aboutPage {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.hello-text {
+    font-size: 120px;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    -webkit-text-stroke: 1px white;
+}
+
+.container-img {
+    position: absolute;
+    right: 0;
+    background: url('../images/S-Profile-Image-BG-1.png');
+    z-index: 1;
+    height: 800px;
+    width: 600px;
+    top: 0;
 }
 
 @media only screen and (max-width:600px) {
@@ -62,5 +106,8 @@
     .link-nav,
     .link-nav2 {
         font-size: 17px;
+    }
+    .hello-text {
+        font-size: 50px;
     }
 }

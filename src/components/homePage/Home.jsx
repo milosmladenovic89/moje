@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 import '../../styles/Home.css'
 import { HashLink } from 'react-router-hash-link'
 import {
-  SectionText, SectionText3, SectionText3MobileLeft, SectionText3MobileRight, SectionSpanBottom,
+  SectionText0, SectionText3, SectionText3MobileLeft, SectionText3MobileRight, SectionSpanBottom,
   SectionText3Left, SectionImage, SectionImg2, SectionHr, SectionHrRightToLeft, SectionSpan, SectionSpan2,
   SectionSpanBottom2, SectionHover, SectionProjects, SectionProjects2, SectionProjects3, SectionProjects4,
-  SectionProjects5, SectionProjects6, SectionTextArrow, SectionHrLast
+  SectionProjects5, SectionProjects6, SectionTextArrow, SectionHrLast, SectionText03, SectionText01, SectionText02, SectionText04
 } from './HomeFunctions'
 
 
@@ -24,9 +24,6 @@ export default function Homepage() {
   const [hoverArrow, setHoverArrow] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: -120, y: -120 })
   const [timer, setTimer] = useState(false)
-  const [class_1, setClass_1] = useState("")
-  const [class_2, setClass_2] = useState("")
-  const [class_3, setClass_3] = useState("")
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,17 +49,7 @@ export default function Homepage() {
     }
   }, [img])
 
-  useEffect(() => {
-    const time = setTimeout(() => {
-      setClass_1("first-letter")
-      setClass_2('first-letter2')
-      setClass_3('first-letter3')
-    }, 1500);
 
-    return () => {
-      clearTimeout(time)
-    }
-  }, [])
 
 
   useEffect(() => {
@@ -107,10 +94,10 @@ export default function Homepage() {
   }
   function hoverBigArrow() {
     setHoverArrow(true)
-
   }
   function hoverOutBigArrow() {
     setHoverArrow(false)
+
   }
   function hoveredText() {
     setHoverText(true)
@@ -172,71 +159,78 @@ export default function Homepage() {
 
           <div className="heading">
             <div className={hoverCircle ? "text-transparent" : "fonts"} >
-              <SectionText>
-                <div className={`${class_1}`} style={{ position: 'absolute', top: '20%', color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black" }}>
+              <SectionText0>
+                <p className='heading-paragraph' style={{ color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black" }}>
                   FREELANCE
-                </div>
-              </SectionText>
+                </p>
+              </SectionText0>
 
-              <SectionText>
-                <div className={`${class_2}`} style={{ position: 'absolute', top: '30%', color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black", }}>FRONTEND</div>
-              </SectionText>
+              <SectionText01>
+                <p className='heading-paragraph' style={{ color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black", }}>FRONTEND</p>
+              </SectionText01>
 
-              <SectionText>
+              <SectionText02>
 
-                <div className={`${class_3}`} style={{ position: 'absolute', top: '40%', color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black", }}  >
+                <p className='heading-paragraph' style={{ color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black", }}  >
                   DEVELOPER
-                </div>
-              </SectionText>
+                </p>
+              </SectionText02>
 
-              <SectionText>
-                <div
-                  className="text-transparent"
-                  style={{ position: 'absolute', top: '50%', color: hoverArrow ? "white" : "transparent", }}
+              <SectionText03>
+                <p
+                  className="text-transparent heading-paragraph"
+                  style={{ color: hoverArrow ? "white" : "transparent", }}
                 >
                   BASED IN
-                </div>
-              </SectionText>
-              <SectionText>
+                </p>
+              </SectionText03>
 
-                <div
-                  className="text-transparent"
-                  style={{ position: 'absolute', top: '60%', color: hoverArrow ? "white" : "transparent", }}
-                >
-                  SERBIA
-                  {timer && <SectionTextArrow >
-                    <i className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }} ></i>
-                  </SectionTextArrow>}
-                </div>
+              <SectionText04>
 
-              </SectionText>
-              <HashLink to={"#arrowHash"}>
-                <div className='arrow-down-large-father' onMouseOver={hoverBigArrow} onMouseOut={hoverOutBigArrow}>
+                <HashLink to={"#arrowHash"} className='arrow-down-hashLink'>
 
-                </div>
-              </HashLink>
+                  <div
+                    onMouseOver={hoverBigArrow} onMouseOut={hoverOutBigArrow}
+                    className="text-transparent heading-paragraph"
+                    style={{ color: hoverArrow ? "white" : "transparent", }}
+                  >
+                    SERBIA
+                    {timer && <SectionTextArrow >
+                      <i className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }} ></i>
+                    </SectionTextArrow>}
+                  </div>
+                </HashLink>
+
+              </SectionText04>
+
+           
 
 
+
+              <div className='circle-master-container'>
+                <SectionImage>
+                  <div className="circle-container" onMouseOver={onCircle} onMouseOut={onOutCircle}>
+                    <div className="circle">
+                      <p className="circleText" style={{ color: hoverCircle || hoverArrow ? "white" : "black", transition: "1.3s ease" }}>
+                        {text.map((item, index) => (
+                          <span
+                            style={{ transform: `rotate(${index * 9.6}deg)` }}
+                            key={index}
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </p>
+                      <div className={img}></div>
+                    </div>
+                  </div>
+                </SectionImage>
+              </div>
             </div>
 
-            <SectionImage>
-              <div className="circle-container" onMouseOver={onCircle} onMouseOut={onOutCircle}>
-                <div className="circle">
-                  <p className="circleText" style={{ color: hoverCircle || hoverArrow ? "white" : "black", transition: "1.3s ease" }}>
-                    {text.map((item, index) => (
-                      <span
-                        style={{ transform: `rotate(${index * 9.6}deg)` }}
-                        key={index}
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </p>
-                  <div className={img}></div>
-                </div>
-              </div>
-            </SectionImage>
+
           </div>
+
 
 
           <div className='two-spans' id="arrowHash" >
@@ -655,26 +649,26 @@ export default function Homepage() {
 
             <div className='showOnHover-container'>
               <p id='para1' className='fonts hovered-paragraph' onMouseOver={hoveredText} onMouseOut={hoveredTextOut}>Lorem ipsum dolor sit amet.
-                <div
+                <span
                   style={{ transform: `translateX(${mousePosition.x}px)` }}
                   className={hoverText ? 'follow-img' : 'follow-img2'} >
-                </div>
+                </span>
               </p>
 
 
               <p id='para2' className='fonts hovered-paragraph' onMouseOver={hoveredText2} onMouseOut={hoveredTextOut2}>Lorem ipsum dolor sit amet.
-                <div
+                <span
                   style={{ transform: `translateX(${mousePosition.x}px)` }}
                   className={hoverText2 ? 'follow-img-second' : 'follow-img-second2'} >
-                </div>
+                </span>
               </p>
 
 
               <p id='para3' className='fonts hovered-paragraph' onMouseOver={hoveredText3} onMouseOut={hoveredTextOut3}>Lorem ipsum dolor sit amet.
-                <div
+                <span
                   style={{ transform: `translateX(${mousePosition.x}px)` }}
                   className={hoverText3 ? 'follow-img-third' : 'follow-img-third2'} >
-                </div>
+                </span>
               </p>
             </div>
 
