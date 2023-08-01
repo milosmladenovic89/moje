@@ -27,7 +27,7 @@ export function SectionTextAbout({ children }) {
         <section ref={ref} className="animate-text-aboutPage">
             <span
                 style={{
-                    opacity: isInView ? 1 : 0,
+                    
                     transform: isInView ? "translateY(0)" : "translateY(110px)",
                     transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 1.2s',
                 }}
