@@ -28,7 +28,7 @@ export function SectionTextAbout({ children }) {
             <span
                 style={{
                     
-                    transform: isInView ? "translateY(0)" : "translateY(110px)",
+                    transform: isInView ? "translateY(0)" : "translateY(85px)",
                     transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 1.2s',
                 }}
             >
@@ -44,7 +44,7 @@ export function SectionTextAbout2({ children }) {
         <section ref={ref} className="animate-text-aboutPage">
             <span
                 style={{
-                    transform: isInView ? "translateY(0)" : "translateY(110px)",
+                    transform: isInView ? "translateY(0)" : "translateY(85px)",
                     transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 1.3s',
                 }}
             >
@@ -60,7 +60,7 @@ export function SectionTextAbout3({ children }) {
         <section ref={ref} className="animate-text-aboutPage">
             <span
                 style={{
-                    transform: isInView ? "translateY(0)" : "translateY(110px)",
+                    transform: isInView ? "translateY(0)" : "translateY(85px)",
                     transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 1.4s',
                 }}
             >

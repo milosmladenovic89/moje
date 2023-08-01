@@ -160,7 +160,7 @@ export default function Homepage() {
           <div className="heading">
             <div className={hoverCircle ? "text-transparent" : "fonts"} >
               <SectionText0>
-                <p className='heading-paragraph' style={{ color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black" }}>
+                <p className='heading-paragraph ' style={{ color: hoverArrow ? "white" : hoverCircle ? "transparent" : "black" }}>
                   FREELANCE
                 </p>
               </SectionText0>
@@ -178,7 +178,7 @@ export default function Homepage() {
 
               <SectionText03>
                 <p
-                  className="text-transparent heading-paragraph"
+                  className="text-transparent heading-paragraph "
                   style={{ color: hoverArrow ? "white" : "transparent", }}
                 >
                   BASED IN
@@ -203,7 +203,7 @@ export default function Homepage() {
 
               </SectionText04>
 
-           
+
 
 
 
@@ -211,7 +211,7 @@ export default function Homepage() {
                 <SectionImage>
                   <div className="circle-container" onMouseOver={onCircle} onMouseOut={onOutCircle}>
                     <div className="circle">
-                      <p className="circleText" style={{ color: hoverCircle || hoverArrow ? "white" : "black", transition: "1.3s ease" }}>
+                      <p className="circleText" style={{ color: hoverCircle || hoverArrow ? "white" : "black", transition: "1s ease" }}>
                         {text.map((item, index) => (
                           <span
                             style={{ transform: `rotate(${index * 9.6}deg)` }}

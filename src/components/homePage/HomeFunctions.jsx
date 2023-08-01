@@ -12,7 +12,7 @@ export function SectionText0({ children }) {
             <span
                 style={{
                     
-                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
+                    transform: isInView ? "translateY(0)" : "translateY(70px)",
                     transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
@@ -29,7 +29,7 @@ export function SectionText01({ children }) {
             <span
                 style={{
                     
-                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
+                    transform: isInView ? "translateY(0)" : "translateY(70px)",
                     transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
@@ -46,8 +46,8 @@ export function SectionText02({ children }) {
             <span
                 style={{
                     
-                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
-                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                    transform: isInView ? "translateY(0)" : "translateY(70px)",
+                    transition: 'all 0.45s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
                 {children}
@@ -64,8 +64,8 @@ export function SectionText03({ children }) {
             <span
                 style={{
                     
-                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
-                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                    transform: isInView ? "translateY(0)" : "translateY(70px)",
+                    transition: 'all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
                 {children}
@@ -82,8 +82,8 @@ export function SectionText04({ children }) {
             <span
                 style={{
                     
-                    transform: isInView ? "translateY(0)" : "translateY(-110px)",
-                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                    transform: isInView ? "translateY(0)" : "translateY(70px)",
+                    transition: 'all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
                 {children}

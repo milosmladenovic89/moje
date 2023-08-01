@@ -83,10 +83,12 @@
 }
 
 .hello-text {
-    font-size: 120px;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.5rem,calc(1.5rem + 6.23782vw - 25.82456px),5rem);
+    font-weight: 500;
+    font-family: 'DrukWide-Super-Trial';
     -webkit-text-stroke: 1px white;
+
 }
 
 .container-img {
@@ -107,7 +109,5 @@
     .link-nav2 {
         font-size: 17px;
     }
-    .hello-text {
-        font-size: 50px;
-    }
+  
 }

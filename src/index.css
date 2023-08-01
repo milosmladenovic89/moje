@@ -2,6 +2,8 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
 body {
     padding: 0;
     margin: 0;
@@ -103,21 +105,26 @@ body {
     .memes-container {
         width: 100vw;
     }
+
     .btn-memes-container {
         margin: 0;
     }
+
     .btn-memes {
         width: 100%;
         font-size: 15px;
     }
+
     .img-memes {
         width: 100%;
     }
+
     .para-img-memes,
     .para-img-memes2 {
         font-size: 12px;
         font-weight: bold;
     }
+
     .input-memes {
         padding: 2px;
     }
@@ -418,6 +425,7 @@ h2 {
         max-width: 80%;
         padding: 10px;
     }
+
     .weather-feels-like p {
         font-size: 18px;
     }
