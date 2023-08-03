@@ -5,10 +5,11 @@ import '../../styles/Home.css'
 import { HashLink } from 'react-router-hash-link'
 import {
   SectionText0, SectionText3, SectionText3MobileLeft, SectionText3MobileRight, SectionSpanBottom,
-  SectionText3Left, SectionImage, SectionImg2, SectionHr, SectionHrRightToLeft, SectionSpan, SectionSpan2,
+  SectionText3Left, SectionImg2, SectionHr, SectionHrRightToLeft, SectionSpan, SectionSpan2,
   SectionSpanBottom2, SectionHover, SectionProjects, SectionProjects2, SectionProjects3, SectionProjects4,
-  SectionProjects5, SectionProjects6, SectionTextArrow, SectionHrLast, SectionText03, SectionText01, SectionText02, SectionText04
+  SectionProjects5, SectionProjects6, SectionHrLast, SectionText03, SectionText01, SectionText02, SectionText04
 } from './HomeFunctions'
+import { Logo } from './Logo'
 
 
 
@@ -129,7 +130,7 @@ export default function Homepage() {
     }
   }, [])
 
-  let text = 'Milos Mladenovic - Frontend Developer'.split('')
+  let text =  'Milos Mladenovic - Frontend Developer'.split('')
   return (
     <div className="main" id='main'>
       <div>
@@ -141,7 +142,7 @@ export default function Homepage() {
 
         >
           <div className="nav-container">
-            <div></div>
+            <Logo/>
 
             <div>
               <span >
@@ -195,37 +196,59 @@ export default function Homepage() {
                     style={{ color: hoverArrow ? "white" : "transparent", }}
                   >
                     SERBIA
-                    {timer && <SectionTextArrow >
-                      <i className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }} ></i>
-                    </SectionTextArrow>}
+                    {timer &&
+                      <motion.div
+                        style={{ display: "inline-block" }}
+                        initial={{ scale: 0,  }}
+                        animate={{ rotate: 360, scale: 1 }}
+                        transition={{
+                          delay:1,
+                          type: "spring",
+                          stiffness: 50,
+                          damping: 10
+                        }}
+                      >
+
+                        <i className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }}
+                        ></i>
+                      </motion.div>
+                    }
                   </div>
                 </HashLink>
 
               </SectionText04>
 
+              <motion.div className='circle-master-container'
+                initial={{ scale: 0 }}
+                animate={{ scale: [0, 1.5, 0.5, 1] }}
+                transition={{
+                  delay: 1, type: 'spring', damping: 5,
+                  mass: 1.2,
+                  stiffness: 80,
+                }}
 
+              >
 
-
-
-              <div className='circle-master-container'>
-                <SectionImage>
-                  <div className="circle-container" onMouseOver={onCircle} onMouseOut={onOutCircle}>
-                    <div className="circle">
-                      <p className="circleText" style={{ color: hoverCircle || hoverArrow ? "white" : "black", transition: "1s ease" }}>
-                        {text.map((item, index) => (
-                          <span
-                            style={{ transform: `rotate(${index * 9.6}deg)` }}
-                            key={index}
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </p>
-                      <div className={img}></div>
-                    </div>
+                <div className="circle-container" onMouseOver={onCircle} onMouseOut={onOutCircle}>
+                  <div className="circle">
+                    <p className="circleText" style={{ color: hoverCircle || hoverArrow ? "white" : "black", transition: "1s ease" }}>
+                      {text.map((item, index) => (
+                        <span
+                          style={{ transform: `rotate(${index * 9.6}deg)` }}
+                          key={index}
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </p>
+                    <div className={img}></div>
                   </div>
-                </SectionImage>
-              </div>
+                </div>
+
+              </motion.div>
+
+
+
             </div>
 
 

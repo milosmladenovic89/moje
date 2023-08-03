@@ -81,26 +81,8 @@ export function SectionText04({ children }) {
         <section ref={ref} className="animation-text-firstPage">
             <span
                 style={{
-                    
                     transform: isInView ? "translateY(0)" : "translateY(70px)",
                     transition: 'all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-                }}
-            >
-                {children}
-            </span>
-        </section>
-    )
-}
-export function SectionTextArrow({ children }) {
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
-    return (
-        <section ref={ref} className="animeYea">
-            <span
-                style={{
-                    transform: isInView ? 'scale(1)' : 'scale(0)',
-                 
-                    transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
                 }}
             >
                 {children}
@@ -182,24 +164,7 @@ export function SectionText3Left({ children }) {
     )
 }
 
-export function SectionImage({ children }) {
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
 
-    return (
-        <section ref={ref} className="animeImage">
-            <span
-
-                style={{
-                    transform: isInView ? 'scale(1)' : 'scale(0)',
-                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s',
-                }}
-            >
-                {children}
-            </span>
-        </section>
-    )
-}
 
 export function SectionImg2({ children }) {
 

@@ -19,12 +19,16 @@
     z-index: 1;
 }
 
+.about-logo-container {
+    margin-left: 10vw;
+}
+
 .link-nav-container {
     position: relative;
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    margin: 10vh auto;
+    margin: 10vh auto 0 auto;
 }
 
 .link-nav {
@@ -84,11 +88,10 @@
 
 .hello-text {
     margin: 0;
-    font-size: clamp(1.5rem,calc(1.5rem + 6.23782vw - 25.82456px),5rem);
+    font-size: clamp(1.5rem, calc(1.5rem + 6.23782vw - 25.82456px), 5rem);
     font-weight: 500;
     font-family: 'DrukWide-Super-Trial';
     -webkit-text-stroke: 1px white;
-
 }
 
 .container-img {
@@ -109,5 +112,4 @@
     .link-nav2 {
         font-size: 17px;
     }
-  
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import '../../styles/AboutMe.css'
 import { SectionTextAbout, SectionTextAbout2, SectionTextAbout3 } from './AboutMeFunctions';
+import { Logo } from '../homePage/Logo';
 
 export default function AboutMe() {
   const [displayed, updateDisplay] = useState("");
@@ -47,8 +48,15 @@ export default function AboutMe() {
       transition={{ duration: 0.5 }}
     >
       <div className="link-nav-container">
-        <Link className="link-nav" to="/about">About</Link>
-        <Link className="link-nav2" to="/" >Home</Link>
+        <div className='about-logo-container'>
+          <Logo />
+        </div>
+
+        <div>
+          <Link className="link-nav" to="/about">About</Link>
+          <Link className="link-nav2" to="/" >Home</Link>
+        </div>
+
       </div>
 
 
@@ -66,9 +74,11 @@ export default function AboutMe() {
           <motion.p className='hello-text text-transparent-aboutPage'
             initial={{ x: -450 }}
             animate={{ x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5, type: 'spring', damping: 10,
-            mass: 0.75,
-            stiffness: 150, }}
+            transition={{
+              duration: 0.5, delay: 0.5, type: 'spring', damping: 10,
+              mass: 0.75,
+              stiffness: 150,
+            }}
           >HELLO</motion.p>
         </div>
 
@@ -87,7 +97,7 @@ export default function AboutMe() {
         <motion.div className='container-img'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 4, delay: 3.5 }}
+          transition={{ duration: 3.5, delay: 3.5 }}
         ></motion.div>
 
 
