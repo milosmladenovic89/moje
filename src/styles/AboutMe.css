@@ -1,3 +1,7 @@
+.About-page-main-container {
+    color: white;
+}
+
 .div-about-container {
     background-color: black;
     min-height: 100vh;
@@ -5,7 +9,7 @@
     overflow: hidden;
 }
 
-.noise {
+.noise2 {
     position: fixed;
     top: -50%;
     left: -50%;
@@ -29,6 +33,10 @@
     justify-content: space-between;
     width: 100vw;
     margin: 10vh auto 0 auto;
+}
+
+.skewImage {
+    display: flex;
 }
 
 .link-nav {
@@ -103,6 +111,22 @@
     width: 600px;
     top: 0;
 }
+
+.about-page-text-me {
+    width: 30vw;
+    margin: 0 auto;
+    padding: 120px auto;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+
+/*
+.p-about-me-page {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+*/
 
 @media only screen and (max-width:600px) {
     .link-nav {

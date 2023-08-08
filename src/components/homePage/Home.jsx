@@ -723,8 +723,6 @@ export default function Homepage() {
               <Link className='linkedin-link' to='/MilosMladenovic_CV.pdf' target="_blank"> Curriculum Vitae</Link>
               <a className='linkedin-link' href="mailto:milos89mladenovic@gmail.com">Email</a>
 
-
-
             </div>
 
             <HashLink className='hashLink' to={"#main"}>Back to top ⇧</HashLink>
