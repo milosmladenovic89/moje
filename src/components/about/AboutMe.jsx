@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import '../../styles/AboutMe.css'
-import { SectionTextAbout, SectionTextAbout2, SectionTextAbout3 } from './AboutMeFunctions';
+import { SectionTextAbout, SectionTextAbout2, SectionTextAbout3,Section,SectionShowColor1,TextVariants,TextVariants2,TextVariants3,TextVariants4,TextVariants5,TextVariants6 } from './AboutMeFunctions';
 import { Logo } from '../homePage/Logo';
+import { HashLink } from 'react-router-hash-link'
+import { SectionHr } from '../homePage/HomeFunctions';
+
 
 export default function AboutMe() {
   const [displayed, updateDisplay] = useState("");
@@ -47,102 +50,14 @@ export default function AboutMe() {
       clearTimeout(timer)
     }
   }, [])
-  function Section({ children }) {
-    const ref = useRef(null)
-    const isInView = useInView(ref, { amount: 1 })
-    return (
-      <section className="skewImage" ref={ref}>
-        <span
-          style={{
-            transform: isInView ? 'rotate(0deg)scale(1)translateY(10px)' : 'perspective(900px)rotateX(60deg)scale(0.7)',
-            opacity: isInView ? 1 : 1,
-            transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s',
-          }}
-        >
-          {children}
-        </span>
-      </section>
-    )
-  }
 
-  const TextVariants = {
-    offscreen: {
-      opacity: 0,
 
-    },
-    onscreen: {
+ 
 
-      opacity: 1,
-      transition: {
-        duration: 1,
-        amount: 0.8
-      }
-    }
-  };
-  const TextVariants2 = {
-    offscreen: {
-      opacity: 0
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 0.2
-      }
-    }
-  };
-  const TextVariants3 = {
-    offscreen: {
-      opacity: 0
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 0.3
-      }
-    }
-  };
-  const TextVariants4 = {
-    offscreen: {
-      opacity: 0
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 0.4
-      }
-    }
-  };
 
-  const TextVariants5 = {
-    offscreen: {
-      opacity: 0
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 0.5
-      }
-    }
-  };
-  const TextVariants6 = {
-    offscreen: {
-      opacity: 0
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 0.6
-      }
-    }
-  };
   return (
 
-    <div className='About-page-main-container' style={{ backgroundColor: time ? "black" : '' }}>
+    <div id='main2' className='About-page-main-container' style={{ backgroundColor: time ? "black" : '' }}>
       <motion.div
         className="div-about-container"
         initial={{ y: -1000 }}
@@ -164,9 +79,9 @@ export default function AboutMe() {
 
 
 
-        <div className='hello-container'>
+        <div className='hello-container' >
 
-          <p className='animated-text-container'>
+          <p className='animated-text-container' >
             <span className="animated-text">{displayed}</span>
           </p>
 
@@ -207,59 +122,84 @@ export default function AboutMe() {
 
       <div className='about-page-text-me'>
         <Section>
-          <p>
-
-
-
-
+          <p className='p-about-me-page'>
             <motion.span
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ amount: 1 }}
+              viewport={{ once: true }}
               variants={TextVariants}
             >My name is Miloš. I'm a  frontend developer from Smederevo(Serbia).</motion.span>
 
             <motion.span
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ amount: 1 }}
+              viewport={{ once: true }}
               variants={TextVariants2}>
               I'm a father of 1. I love being in the outdoors. </motion.span>
             <motion.span
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ amount: 1 }}
+              viewport={{ once: true }}
               variants={TextVariants3}
             >Long walk, riding a bike, playing with my son is just some things i love to do to clear my mind and relax.</motion.span>
           </p>
 
-          <p className='p-about-me-page'>
+          <p className='p-about-me-page2'>
 
             <motion.span
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ amount: 1 }}
+              viewport={{ once: true }}
               variants={TextVariants4}
             >From november 2022 I am certified Javascript Developer - one year education program from ITAcademy(linkgroup), this project is created with React framework.</motion.span>
             <motion.span
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ amount: 1 }}
+              viewport={{ once: true }}
               variants={TextVariants5}
             >I am interested in creating useful relationships between people and technology.</motion.span>
             <motion.span
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ amount: 1 }}
+              viewport={{ once: true }}
               variants={TextVariants6}
-            >Some of the technologies I've used:</motion.span>
+            >Some of the technologies I'm using:</motion.span>
 
           </p>
         </Section>
 
-
+        <p className='largeText-technology'>
+          <SectionShowColor1><span className='java'>JAVASCRIPT, </span></SectionShowColor1>
+           <span>REACT, </span> <span>TYPESCRIPT, </span><span>NEXTJS, </span>  <span>CSS3, </span> <span>HTML5, </span>  <span>ADOBE PHOTOSHOP, </span> <span>ADOBE ILLUSTRATOR, </span> <span>BOOTSTRAP, </span> <span>FRAMER-MOTION, </span> <span>GITHUB</span>
+        </p>
 
       </div>
+
+
+
+      <div className='hr-container-about'>
+
+        <SectionHr>
+          <hr className='hr-about' />
+        </SectionHr>
+      </div>
+
+
+
+      <footer id='footer-about'>
+
+
+        <div className='footer-left-container-about'>
+
+          <a className='linkedin-link-about' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
+          <Link className='linkedin-link-about' to='/MilosMladenovic_CV.pdf' target="_blank"> Curriculum Vitae</Link>
+          <a className='linkedin-link-about' href="mailto:milos89mladenovic@gmail.com">Email</a>
+
+        </div>
+
+        <HashLink className='hashLink-about' to={"#main2"}>Back to top ⇧</HashLink>
+
+      </footer>
 
 
       <div className="noise2"></div>

@@ -1,5 +1,6 @@
 .About-page-main-container {
     color: white;
+
 }
 
 .div-about-container {
@@ -10,6 +11,7 @@
 }
 
 .noise2 {
+
     position: fixed;
     top: -50%;
     left: -50%;
@@ -40,7 +42,7 @@
 }
 
 .link-nav {
-    position: absolute;
+    position: fixed;
     right: 10%;
     z-index: 2;
     text-decoration: none;
@@ -49,7 +51,7 @@
 }
 
 .link-nav2 {
-    position: absolute;
+    position: fixed;
     right: 5%;
     z-index: 2;
     text-decoration: none;
@@ -72,7 +74,9 @@
     display: flex;
     overflow: hidden;
 }
-
+.animate-show-text-aboutPage{
+    display: inline-flex;
+}
 .animated-text {
     position: absolute;
     left: 0;
@@ -93,7 +97,9 @@
     color: transparent;
     -webkit-text-stroke: 1px white;
 }
-
+.java{
+    -webkit-text-stroke: 1px white;
+}
 .hello-text {
     margin: 0;
     font-size: clamp(1.5rem, calc(1.5rem + 6.23782vw - 25.82456px), 5rem);
@@ -110,28 +116,124 @@
     height: 800px;
     width: 600px;
     top: 0;
+
 }
 
 .about-page-text-me {
-    width: 30vw;
-    margin: 0 auto;
-    padding: 120px auto;
+    width: 35vw;
+    margin: 15vh auto;
     font-size: 30px;
     font-family: sans-serif;
+
 }
 
-
-/*
-.p-about-me-page {
-    margin-bottom: 0;
-    padding-bottom: 20px;
+.largeText-technology {
+    margin: 20vh auto;
+    font-size: 40px;
+    font-family: 'DrukWide-Super-Trial';
+    width: 150%;
+    z-index: 10;
+    position: relative;
 }
-*/
 
-@media only screen and (max-width:600px) {
+#footer-about{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+   
+}
+.footer-left-container-about{
+    z-index: 10000;
+    display: block;
+}
+.linkedin-link-about {
+    text-decoration: none;
+    color: white;
+    z-index: 1000;
+    padding: 0 20px;
+}
+.hashLink-about {
+    z-index: 1000;
+    text-decoration: none;
+    color: white;
+    padding-right: 20px;
+}
+.hr-container-about {
+    width: 80vw;
+    margin: 5vh auto;
+    margin-top: 25vh;
+    text-align: center;
+}
+
+.hr-about {
+    border-top: 1px solid white;
+}
+
+/****************************************************** MEDIA QUERY **************************************/
+@media only screen and (max-width:768px) {
+    #footer-about {
+        width: 100%;
+        display: block;
+        padding: 40px 0;
+        font-size: 14px;
+        text-align: center;
+        z-index: 10000;
+        position: relative;
+    }
+      .footer-left-container-about {
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+    .hashLink-about {
+        padding: 0;
+    }
     .link-nav {
+        position: absolute;
         right: 25%;
     }
+
+    .link-nav2 {
+        position: absolute;
+    }
+
+    .about-page-text-me {
+        width: 90vw;
+        margin: 0 auto;
+        padding: 120px auto;
+        font-size: 20px;
+        font-family: sans-serif;
+
+    }
+
+    .p-about-me-page {
+        width: 90%;
+        padding-bottom: 20px;
+        margin: 0 auto;
+        margin-top: 20vh;
+        font-size: 16px;
+    }
+
+    .p-about-me-page2 {
+        width: 90%;
+        padding-bottom: 20px;
+        margin: 0 auto;
+        font-size: 16px;
+        margin-bottom: 10vh;
+    }
+
+    .largeText-technology {
+        width: 90%;
+        margin: 10vw auto;
+        font-size: 18px;
+    }
+
     .link-nav,
     .link-nav2 {
         font-size: 17px;
