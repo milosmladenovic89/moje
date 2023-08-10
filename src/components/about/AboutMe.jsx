@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import '../../styles/AboutMe.css'
-import { SectionTextAbout, SectionTextAbout2, SectionTextAbout3,Section,SectionShowColor1,TextVariants,TextVariants2,TextVariants3,TextVariants4,TextVariants5,TextVariants6 } from './AboutMeFunctions';
+import { SectionTextAbout, SectionTextAbout2, SectionTextAbout3,Section,SectionShowColor1,TextVariants,TextVariants2,TextVariants3,TextVariants4,TextVariants5,TextVariants6, SectionShowColor2, SectionShowColor3, SectionShowColor4, SectionShowColor5, SectionShowColor6 } from './AboutMeFunctions';
 import { Logo } from '../homePage/Logo';
 import { HashLink } from 'react-router-hash-link'
 import { SectionHr } from '../homePage/HomeFunctions';
@@ -57,7 +57,7 @@ export default function AboutMe() {
 
   return (
 
-    <div id='main2' className='About-page-main-container' style={{ backgroundColor: time ? "black" : '' }}>
+    <div id='main2' className='About-page-main-container' style={{ backgroundColor: time ? "black" : '#70b5dd' }}>
       <motion.div
         className="div-about-container"
         initial={{ y: -1000 }}
@@ -169,8 +169,8 @@ export default function AboutMe() {
         </Section>
 
         <p className='largeText-technology'>
-          <SectionShowColor1><span className='java'>JAVASCRIPT, </span></SectionShowColor1>
-           <span>REACT, </span> <span>TYPESCRIPT, </span><span>NEXTJS, </span>  <span>CSS3, </span> <span>HTML5, </span>  <span>ADOBE PHOTOSHOP, </span> <span>ADOBE ILLUSTRATOR, </span> <span>BOOTSTRAP, </span> <span>FRAMER-MOTION, </span> <span>GITHUB</span>
+          <SectionShowColor1><span >JAVASCRIPT, </span></SectionShowColor1>
+           <SectionShowColor2><span>REACT, </span></SectionShowColor2> <SectionShowColor3><span>TYPESCRIPT, </span></SectionShowColor3><SectionShowColor4><span>NEXTJS, </span></SectionShowColor4>  <SectionShowColor5><span>CSS3, </span></SectionShowColor5><SectionShowColor6><span>HTML5, </span></SectionShowColor6>   <SectionShowColor5><span>ADOBE PHOTOSHOP, </span></SectionShowColor5> <SectionShowColor4><span>ADOBE ILLUSTRATOR, </span></SectionShowColor4> <SectionShowColor3></SectionShowColor3><SectionShowColor6><span>BOOTSTRAP, </span></SectionShowColor6> <SectionShowColor2><span>FRAMER-MOTION, </span></SectionShowColor2> <SectionShowColor1><span >GITHUB</span></SectionShowColor1>
         </p>
 
       </div>

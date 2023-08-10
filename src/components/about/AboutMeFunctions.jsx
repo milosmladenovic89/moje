@@ -98,7 +98,7 @@ export function SectionShowColor1({ children }) {
                 style={{
                     opacity: isInView ? 1 : 0.1,
                     color: isInView ? "white" : "black",
-                    transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 1.4s',
+                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
                 }}
             >
                 {children}
@@ -107,6 +107,96 @@ export function SectionShowColor1({ children }) {
     )
 }
 
+
+export function SectionShowColor2({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animate-show-text-aboutPage">
+            <span
+                style={{
+                    opacity: isInView ? 1 : 0.1,
+                    color: isInView ? "white" : "black",
+                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
+
+export function SectionShowColor3({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animate-show-text-aboutPage">
+            <span
+                style={{
+                    opacity: isInView ? 1 : 0.1,
+                    color: isInView ? "white" : "black",
+                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
+
+export function SectionShowColor4({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animate-show-text-aboutPage">
+            <span
+                style={{
+                    opacity: isInView ? 1 : 0.1,
+                    color: isInView ? "white" : "black",
+                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1.1s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
+
+
+export function SectionShowColor5({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animate-show-text-aboutPage">
+            <span
+                style={{
+                    opacity: isInView ? 1 : 0.1,
+                    color: isInView ? "white" : "black",
+                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1.4s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
+export function SectionShowColor6({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
+    return (
+        <section ref={ref} className="animate-show-text-aboutPage">
+            <span
+                style={{
+                    opacity: isInView ? 1 : 0.1,
+                    color: isInView ? "white" : "black",
+                    transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1.7s',
+                }}
+            >
+                {children}
+            </span>
+        </section>
+    )
+}
 
 export const TextVariants = {
     offscreen: {

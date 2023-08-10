@@ -97,9 +97,11 @@
     color: transparent;
     -webkit-text-stroke: 1px white;
 }
-.java{
+.largeText-technology span{
     -webkit-text-stroke: 1px white;
 }
+
+
 .hello-text {
     margin: 0;
     font-size: clamp(1.5rem, calc(1.5rem + 6.23782vw - 25.82456px), 5rem);
