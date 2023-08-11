@@ -188,8 +188,7 @@ export default function AboutMe() {
 
 
             <SectionSpanBottom2>
-              
-              <span className='span4'></span>
+              <span className='span4-about'></span>
             </SectionSpanBottom2>
           </div>
 
