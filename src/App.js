@@ -10,6 +10,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Tenzi from "./components/projects/projects-components/Tenzi/Tenzi";
 import Weather from "./components/projects/projects-components/weather/Weather";
 import './styles/Home.css'
+import ScrollToTop from "./components/homePage/ScrollToTop";
+
+
 
 export default function App() {
     const count = useMotionValue(0)
@@ -109,9 +112,10 @@ export default function App() {
                 <Route path="/memes" element={<Memes />} />
                 <Route path="/tenzi" element={<Tenzi />} />
                 <Route path="/weather" element={<Weather />} />
+                
             </Routes>}
 
-
+                <ScrollToTop/>
         </div>
 
 

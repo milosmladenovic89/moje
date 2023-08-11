@@ -25,6 +25,7 @@ export default function Homepage() {
   const [hoverArrow, setHoverArrow] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: -120, y: -120 })
   const [timer, setTimer] = useState(false)
+  const [loadTime, setLoadTime] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,7 +51,12 @@ export default function Homepage() {
     }
   }, [img])
 
+  useEffect(() => {
+    const time = setTimeout(() => {
+      setLoadTime(true)
+    }, 500);
 
+  }, [])
 
 
   useEffect(() => {
@@ -130,10 +136,10 @@ export default function Homepage() {
     }
   }, [])
 
-  let text =  'Milos Mladenovic - Frontend Developer'.split('')
+  let text = 'Milos Mladenovic - Frontend Developer'.split('')
   return (
     <div className="main" id='main'>
-      <div>
+      <div id='main33'>
         <motion.div
           initial={{ y: 1000 }}
           animate={{ y: 0 }}
@@ -142,7 +148,7 @@ export default function Homepage() {
 
         >
           <div className="nav-container">
-            <Logo/>
+            <Logo />
 
             <div>
               <span >
@@ -199,10 +205,10 @@ export default function Homepage() {
                     {timer &&
                       <motion.div
                         style={{ display: "inline-block" }}
-                        initial={{ scale: 0,  }}
+                        initial={{ scale: 0, }}
                         animate={{ rotate: 360, scale: 1 }}
                         transition={{
-                          delay:1,
+                          delay: 1,
                           type: "spring",
                           stiffness: 50,
                           damping: 10
@@ -254,6 +260,9 @@ export default function Homepage() {
 
           </div>
 
+        </motion.div>
+
+        {loadTime && <div className='restOfThePage'>
 
 
           <div className='two-spans' id="arrowHash" >
@@ -730,9 +739,9 @@ export default function Homepage() {
           </footer>
 
 
-        </motion.div>
-      </div >
 
+        </div >}
+      </div>
       <div className="noise"></div>
     </div >
   )

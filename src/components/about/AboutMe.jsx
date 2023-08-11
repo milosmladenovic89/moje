@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import '../../styles/AboutMe.css'
-import { SectionTextAbout, SectionTextAbout2, SectionTextAbout3,Section,SectionShowColor1,TextVariants,TextVariants2,TextVariants3,TextVariants4,TextVariants5,TextVariants6, SectionShowColor2, SectionShowColor3, SectionShowColor4, SectionShowColor5, SectionShowColor6 } from './AboutMeFunctions';
+import { SectionTextAbout, SectionTextAbout2, SectionTextAbout3, Section, SectionShowColor1, TextVariants, TextVariants2, TextVariants3, TextVariants4, TextVariants5, TextVariants6, SectionShowColor2, SectionShowColor3, SectionShowColor4, SectionShowColor5, SectionShowColor6 } from './AboutMeFunctions';
 import { Logo } from '../homePage/Logo';
 import { HashLink } from 'react-router-hash-link'
-import { SectionHr } from '../homePage/HomeFunctions';
+import { SectionHr, SectionSpanBottom, SectionSpanBottom2 } from '../homePage/HomeFunctions';
 
 
 export default function AboutMe() {
@@ -16,6 +16,7 @@ export default function AboutMe() {
   const message = " Freelance/ Frontend/ Developer/ Based in/ Serbia"
 
   let delay = 25
+
 
 
   useEffect(() => {
@@ -52,13 +53,14 @@ export default function AboutMe() {
   }, [])
 
 
- 
+
+
 
 
   return (
 
     <div id='main2' className='About-page-main-container' style={{ backgroundColor: time ? "black" : '#70b5dd' }}>
-      <motion.div
+      {time}<motion.div
         className="div-about-container"
         initial={{ y: -1000 }}
         animate={{ y: 0 }}
@@ -120,86 +122,93 @@ export default function AboutMe() {
 
       </motion.div>
 
-      <div className='about-page-text-me'>
-        <Section>
-          <p className='p-about-me-page'>
-            <motion.span
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true }}
-              variants={TextVariants}
-            >My name is Miloš. I'm a  frontend developer from Smederevo(Serbia).</motion.span>
+      {time &&
+        <div>
+          <div className='about-page-text-me'>
+            <Section>
+              <p className='p-about-me-page'>
+                <motion.span
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true }}
+                  variants={TextVariants}
+                >My name is Miloš. I'm a  frontend developer from Smederevo(Serbia).</motion.span>
 
-            <motion.span
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true }}
-              variants={TextVariants2}>
-              I'm a father of 1. I love being in the outdoors. </motion.span>
-            <motion.span
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true }}
-              variants={TextVariants3}
-            >Long walk, riding a bike, playing with my son is just some things i love to do to clear my mind and relax.</motion.span>
-          </p>
+                <motion.span
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true }}
+                  variants={TextVariants2}>
+                  I'm a father of 1. I love being in the outdoors. </motion.span>
+                <motion.span
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true }}
+                  variants={TextVariants3}
+                >Long walk, riding a bike, playing with my son is just some things i love to do to clear my mind and relax.</motion.span>
+              </p>
 
-          <p className='p-about-me-page2'>
+              <p className='p-about-me-page2'>
 
-            <motion.span
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true }}
-              variants={TextVariants4}
-            >From november 2022 I am certified Javascript Developer - one year education program from ITAcademy(linkgroup), this project is created with React framework.</motion.span>
-            <motion.span
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true }}
-              variants={TextVariants5}
-            >I am interested in creating useful relationships between people and technology.</motion.span>
-            <motion.span
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true }}
-              variants={TextVariants6}
-            >Some of the technologies I'm using:</motion.span>
+                <motion.span
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true }}
+                  variants={TextVariants4}
+                >From november 2022 I am certified Javascript Developer - one year education program from ITAcademy(linkgroup), this project is created with React framework.</motion.span>
+                <motion.span
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true }}
+                  variants={TextVariants5}
+                >I am interested in creating useful relationships between people and technology.</motion.span>
+                <motion.span
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true }}
+                  variants={TextVariants6}
+                >Some of the technologies I'm using:</motion.span>
 
-          </p>
-        </Section>
+              </p>
+            </Section>
 
-        <p className='largeText-technology'>
-          <SectionShowColor1><span >JAVASCRIPT, </span></SectionShowColor1>
-           <SectionShowColor2><span>REACT, </span></SectionShowColor2> <SectionShowColor3><span>TYPESCRIPT, </span></SectionShowColor3><SectionShowColor4><span>NEXTJS, </span></SectionShowColor4>  <SectionShowColor5><span>CSS3, </span></SectionShowColor5><SectionShowColor6><span>HTML5, </span></SectionShowColor6>   <SectionShowColor5><span>ADOBE PHOTOSHOP, </span></SectionShowColor5> <SectionShowColor4><span>ADOBE ILLUSTRATOR, </span></SectionShowColor4> <SectionShowColor3></SectionShowColor3><SectionShowColor6><span>BOOTSTRAP, </span></SectionShowColor6> <SectionShowColor2><span>FRAMER-MOTION, </span></SectionShowColor2> <SectionShowColor1><span >GITHUB</span></SectionShowColor1>
-        </p>
+            <p className='largeText-technology'>
+              <SectionShowColor1><span >JAVASCRIPT, </span></SectionShowColor1>
+              <SectionShowColor2><span>REACT, </span></SectionShowColor2> <SectionShowColor3><span>TYPESCRIPT, </span></SectionShowColor3><SectionShowColor4><span>NEXTJS, </span></SectionShowColor4>  <SectionShowColor5><span>CSS3, </span></SectionShowColor5><SectionShowColor6><span>HTML5, </span></SectionShowColor6>   <SectionShowColor5><span>ADOBE PHOTOSHOP, </span></SectionShowColor5> <SectionShowColor4><span>ADOBE ILLUSTRATOR, </span></SectionShowColor4> <SectionShowColor3></SectionShowColor3><SectionShowColor6><span>BOOTSTRAP, </span></SectionShowColor6> <SectionShowColor2><span>FRAMER-MOTION, </span></SectionShowColor2> <SectionShowColor1><span >GITHUB</span></SectionShowColor1>
+            </p>
 
-      </div>
-
-
-
-      <div className='hr-container-about'>
-
-        <SectionHr>
-          <hr className='hr-about' />
-        </SectionHr>
-      </div>
+          </div>
 
 
+          <div className='two-spans-about'>
 
-      <footer id='footer-about'>
+            <SectionSpanBottom>
+              <span className='span3-about'></span>
+            </SectionSpanBottom>
 
 
-        <div className='footer-left-container-about'>
+            <SectionSpanBottom2>
+              <span className='span4-about'></span>
+            </SectionSpanBottom2>
+          </div>
 
-          <a className='linkedin-link-about' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
-          <Link className='linkedin-link-about' to='/MilosMladenovic_CV.pdf' target="_blank"> Curriculum Vitae</Link>
-          <a className='linkedin-link-about' href="mailto:milos89mladenovic@gmail.com">Email</a>
 
+          <footer id='footer-about'>
+
+
+            <div className='footer-left-container-about'>
+
+              <a className='linkedin-link-about' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
+              <Link className='linkedin-link-about' to='/MilosMladenovic_CV.pdf' target="_blank"> Curriculum Vitae</Link>
+              <a className='linkedin-link-about' href="mailto:milos89mladenovic@gmail.com">Email</a>
+
+            </div>
+
+            <HashLink className='hashLink-about' to={"#main2"}>Back to top ⇧</HashLink>
+
+          </footer>
         </div>
-
-        <HashLink className='hashLink-about' to={"#main2"}>Back to top ⇧</HashLink>
-
-      </footer>
+      }
 
 
       <div className="noise2"></div>

@@ -32,6 +32,10 @@
         bottom: 0;
     }
     
+    .restOfThePage {
+        background-color: #70b5dd;
+    }
+    
     .hr-container {
         width: 80vw;
         margin: 5vh auto;
@@ -127,7 +131,6 @@
     }
     
     .noise {
-        
         z-index: 100;
         position: fixed;
         top: -50%;
@@ -340,7 +343,6 @@
     }
     
     .linkNav {
-   
         position: fixed;
         text-decoration: none;
         color: black;
@@ -378,7 +380,6 @@
         display: flex;
         justify-content: right;
         margin-top: 20vh;
-      
     }
     
     .circle {
@@ -663,8 +664,7 @@
     }
     
     .after {
-        background-color:  #70b5dd;
-      
+        background-color: #70b5dd;
     }
     
     .anime2 {
