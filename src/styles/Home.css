@@ -41,6 +41,44 @@
         margin: 5vh auto;
         margin-top: 25vh;
         text-align: center;
+        position: relative;
+    }
+    
+    .mosaic-hrContainer {
+        width: 80vw;
+        margin: 5vh auto;
+    }
+    
+    .m1-homePage {
+        position: absolute;
+        width: 320px;
+        height: 225px;
+        top: 0;
+        left: 0;
+    }
+    
+    .m2-homePage {
+        position: absolute;
+        width: 320px;
+        height: 225px;
+        right: 0;
+        top: 0;
+    }
+    
+    .m3-homePage {
+        position: absolute;
+        width: 320px;
+        height: 225px;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .m4-homePage {
+        position: absolute;
+        width: 320px;
+        height: 225px;
+        left: 0;
+        bottom: 0;
     }
     
     .animeHr {
@@ -956,7 +994,7 @@
         height: 150px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -128%;
         z-index: -1;
     }
     
@@ -968,7 +1006,7 @@
         transition: 0.1s all;
         transform: translate(-50%, -50%);
         top: -70%;
-        left: -110%;
+        left: -128%;
     }
     
     .follow-img-second {
@@ -981,7 +1019,7 @@
         height: 150px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -128%;
         z-index: -1;
     }
     
@@ -992,7 +1030,7 @@
         height: 0px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -128%;
     }
     
     .follow-img-third {
@@ -1005,7 +1043,7 @@
         height: 150px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -128%;
         z-index: -1;
     }
     
@@ -1016,7 +1054,7 @@
         height: 0px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -128%;
     }
     
     .hovered-paragraph:hover {
@@ -1076,6 +1114,13 @@
     }
     
     @media only screen and (max-width:768px) {
+        .m1-homePage,
+        .m2-homePage,
+        .m3-homePage,
+        .m4-homePage {
+            width: 120px;
+            height: 75px;
+        }
         .circle-master-container {
             z-index: 10;
             right: 0;

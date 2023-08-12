@@ -7,7 +7,7 @@ import {
   SectionText0, SectionText3, SectionText3MobileLeft, SectionText3MobileRight, SectionSpanBottom,
   SectionText3Left, SectionImg2, SectionHr, SectionHrRightToLeft, SectionSpan, SectionSpan2,
   SectionSpanBottom2, SectionHover, SectionProjects, SectionProjects2, SectionProjects3, SectionProjects4,
-  SectionProjects5, SectionProjects6, SectionHrLast, SectionText03, SectionText01, SectionText02, SectionText04
+  SectionProjects5, SectionProjects6, SectionHrLast, SectionText03, SectionText01, SectionText02, SectionText04, SectionImgMosaic1, SectionImgMosaic4, SectionImgMosaic2, SectionImgMosaic3
 } from './HomeFunctions'
 import { Logo } from './Logo'
 
@@ -55,6 +55,10 @@ export default function Homepage() {
     const time = setTimeout(() => {
       setLoadTime(true)
     }, 500);
+
+    return () => {
+      clearTimeout(time)
+    }
 
   }, [])
 
@@ -283,6 +287,9 @@ export default function Homepage() {
 
           <div className='hr-container' >
 
+
+
+
             <SectionProjects>
               <span className='projects'>P</span>
             </SectionProjects>
@@ -315,6 +322,35 @@ export default function Homepage() {
               <span className='projects'>S</span>
             </SectionProjects2>
 
+
+
+
+
+            <SectionImgMosaic1>
+              <div className='m1 m1-homePage'></div>
+            </SectionImgMosaic1>
+
+            <SectionImgMosaic2>
+              <div className='m2 m2-homePage'></div>
+            </SectionImgMosaic2>
+
+            <SectionImgMosaic3>
+              <div className='m3 m3-homePage'></div>
+            </SectionImgMosaic3>
+
+
+            <SectionImgMosaic4>
+              <div className='m4 m4-homePage'></div>
+            </SectionImgMosaic4>
+
+
+            <SectionHr>
+
+            </SectionHr>
+          </div>
+
+
+          <div className='mosaic-hrContainer'>
             <SectionHr>
               <hr className='hr' />
             </SectionHr>
@@ -721,8 +757,6 @@ export default function Homepage() {
               <span className='span4'></span>
             </SectionSpanBottom2>
           </div>
-
-
 
 
           <footer id='footer'>

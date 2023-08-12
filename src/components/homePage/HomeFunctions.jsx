@@ -11,7 +11,7 @@ export function SectionText0({ children }) {
         <section ref={ref} className="animation-text-firstPage">
             <span
                 style={{
-                    
+
                     transform: isInView ? "translateY(0)" : "translateY(70px)",
                     transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
@@ -28,7 +28,7 @@ export function SectionText01({ children }) {
         <section ref={ref} className="animation-text-firstPage">
             <span
                 style={{
-                    
+
                     transform: isInView ? "translateY(0)" : "translateY(70px)",
                     transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
@@ -45,7 +45,7 @@ export function SectionText02({ children }) {
         <section ref={ref} className="animation-text-firstPage">
             <span
                 style={{
-                    
+
                     transform: isInView ? "translateY(0)" : "translateY(70px)",
                     transition: 'all 0.45s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
@@ -63,7 +63,7 @@ export function SectionText03({ children }) {
         <section ref={ref} className="animation-text-firstPage">
             <span
                 style={{
-                    
+
                     transform: isInView ? "translateY(0)" : "translateY(70px)",
                     transition: 'all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
@@ -370,7 +370,8 @@ export function SectionProjects({ children }) {
             <span
                 style={{
                     opacity: isInView ? 1 : 0,
-                    transform: isInView ? 'translateX(0)' : 'translateX(-500px)',
+                    transform: isInView ? 'translateX(0) translateY(120px)' : 'translateX(-500px)',
+
                     transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
                 }}
             >
@@ -387,7 +388,8 @@ export function SectionProjects2({ children }) {
             <span
                 style={{
                     opacity: isInView ? 1 : 0,
-                    transform: isInView ? 'translateX(0)' : 'translateX(500px)',
+                    transform: isInView ? 'translateX(0) translateY(120px)' : 'translateX(500px)',
+
                     transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
                 }}
             >
@@ -404,7 +406,7 @@ export function SectionProjects3({ children }) {
             <span
                 style={{
                     opacity: isInView ? 1 : 0,
-                    transform: isInView ? 'translateY(0)' : 'translateY(500px)',
+                    transform: isInView ? 'translateY(120px)' : 'translateY(500px)',
                     transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s',
                 }}
             >
@@ -421,7 +423,7 @@ export function SectionProjects4({ children }) {
             <span
                 style={{
                     opacity: isInView ? 1 : 0,
-                    transform: isInView ? 'translateY(0)' : 'translateY(-500px)',
+                    transform: isInView ? 'translateY(120px)' : 'translateY(-500px)',
                     transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
                 }}
             >
@@ -439,7 +441,7 @@ export function SectionProjects5({ children }) {
             <span
                 style={{
                     opacity: isInView ? 1 : 0,
-                    transform: isInView ? 'translateY(0) translateX(0)' : 'translateY(200px) translateX(200px)',
+                    transform: isInView ? 'translateY(120px) translateX(0)' : 'translateY(200px) translateX(200px)',
                     transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s',
                 }}
             >
@@ -457,8 +459,88 @@ export function SectionProjects6({ children }) {
             <span
                 style={{
                     opacity: isInView ? 1 : 0,
-                    transform: isInView ? 'translateY(0) translateX(0)' : 'translateY(-200px) translateX(-200px)',
+                    transform: isInView ? 'translateY(120px) translateX(0)' : 'translateY(-200px) translateX(-200px)',
                     transition: 'all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s',
+                }}
+            >
+                {children}
+            </span>
+        </section >
+    )
+}
+
+export function SectionImgMosaic1({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { amount: 1 })
+    return (
+        <section className='animeProjects' ref={ref}>
+            <span
+                style={{
+                    opacity: isInView ? 1 : 0,
+                    position: "absolute",
+                    left: isInView ? "0%" : "40%",
+                    top: isInView ? "0%" : "40%",
+                    transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section >
+    )
+}
+
+export function SectionImgMosaic2({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { amount: 1 })
+    return (
+        <section className='animeProjects' ref={ref}>
+            <span
+                style={{
+                    opacity: isInView ? 1 : 0,
+                    position: "absolute",
+                    right: isInView ? "0%" : "40%",
+                    top: isInView ? "0%" : "40%",
+                    transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section >
+    )
+}
+
+export function SectionImgMosaic3({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { amount: 1 })
+    return (
+        <section className='animeProjects' ref={ref}>
+            <span
+                style={{
+                    opacity: isInView ? 1 : 0,
+                    position: "absolute",
+                    right: isInView ? "0%" : "40%",
+                    bottom: isInView ? "0%" : "60%",
+                    transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section >
+    )
+}
+
+export function SectionImgMosaic4({ children }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { amount: 1 })
+    return (
+        <section className='animeProjects' ref={ref}>
+            <span
+                style={{
+                    opacity: isInView ? 1 : 0,
+                    position: "absolute",
+                    left: isInView ? "0%" : "40%",
+                    bottom: isInView ? "0%" : "60%",
+                    transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
                 {children}
