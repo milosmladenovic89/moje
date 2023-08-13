@@ -5,7 +5,7 @@ import '../../styles/AboutMe.css'
 import { SectionTextAbout, SectionTextAbout2, SectionTextAbout3, Section, SectionShowColor1, TextVariants, TextVariants2, TextVariants3, TextVariants4, TextVariants5, TextVariants6, SectionShowColor2, SectionShowColor3, SectionShowColor4, SectionShowColor5, SectionShowColor6 } from './AboutMeFunctions';
 import { Logo } from '../homePage/Logo';
 import { HashLink } from 'react-router-hash-link'
-import { SectionHr, SectionSpanBottom, SectionSpanBottom2 } from '../homePage/HomeFunctions';
+import { SectionSpanBottom, SectionSpanBottom2 } from '../homePage/HomeFunctions';
 
 
 export default function AboutMe() {

@@ -32,7 +32,7 @@ export const Logo = () => (
                 initial="hidden"
                 animate="visible"
                 transition={{
-                    delay: 4,
+                    delay: 2,
                     default: { duration: 2, ease: "easeInOut" },
                     fill: { duration: 2, ease: [1, 0, 0.8, 1] }
                 }}

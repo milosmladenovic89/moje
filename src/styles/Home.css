@@ -994,7 +994,7 @@
         height: 150px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -128%;
+        left: -110%;
         z-index: -1;
     }
     
@@ -1006,7 +1006,7 @@
         transition: 0.1s all;
         transform: translate(-50%, -50%);
         top: -70%;
-        left: -128%;
+        left: -110%;
     }
     
     .follow-img-second {
@@ -1019,7 +1019,7 @@
         height: 150px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -128%;
+        left: -110%;
         z-index: -1;
     }
     
@@ -1030,7 +1030,7 @@
         height: 0px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -128%;
+        left: -110%;
     }
     
     .follow-img-third {
@@ -1043,7 +1043,7 @@
         height: 150px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -128%;
+        left: -110%;
         z-index: -1;
     }
     
@@ -1054,7 +1054,7 @@
         height: 0px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -128%;
+        left: -110%;
     }
     
     .hovered-paragraph:hover {

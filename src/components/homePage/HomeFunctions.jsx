@@ -478,8 +478,8 @@ export function SectionImgMosaic1({ children }) {
                 style={{
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
-                    left: isInView ? "0%" : "40%",
-                    top: isInView ? "0%" : "40%",
+                    left: isInView ? "5%" : "70%",
+                    top: isInView ? "5%" : "70%",
                     transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
@@ -498,8 +498,8 @@ export function SectionImgMosaic2({ children }) {
                 style={{
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
-                    right: isInView ? "0%" : "40%",
-                    top: isInView ? "0%" : "40%",
+                    right: isInView ? "5%" : "70%",
+                    top: isInView ? "5%" : "70%",
                     transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
@@ -518,8 +518,8 @@ export function SectionImgMosaic3({ children }) {
                 style={{
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
-                    right: isInView ? "0%" : "40%",
-                    bottom: isInView ? "0%" : "60%",
+                    right: isInView ? "5%" : "70%",
+                    bottom: isInView ? "5%" : "70%",
                     transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >
@@ -538,8 +538,8 @@ export function SectionImgMosaic4({ children }) {
                 style={{
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
-                    left: isInView ? "0%" : "40%",
-                    bottom: isInView ? "0%" : "60%",
+                    left: isInView ? "5%" : "70%",
+                    bottom: isInView ? "5%" : "70%",
                     transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >

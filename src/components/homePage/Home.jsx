@@ -212,7 +212,7 @@ export default function Homepage() {
                         initial={{ scale: 0, }}
                         animate={{ rotate: 360, scale: 1 }}
                         transition={{
-                          delay: 1,
+                          delay: 0.5,
                           type: "spring",
                           stiffness: 50,
                           damping: 10
