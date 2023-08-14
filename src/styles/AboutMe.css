@@ -108,6 +108,8 @@
     font-weight: 500;
     font-family: 'DrukWide-Super-Trial';
     -webkit-text-stroke: 1px white;
+   
+    position: relative;
 }
 
 .container-img {
@@ -118,6 +120,7 @@
     height: 800px;
     width: 600px;
     top: 0;
+
 }
 
 .about-page-text-me {
