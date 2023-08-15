@@ -476,6 +476,7 @@ export function SectionImgMosaic1({ children }) {
         <section className='animeProjects' ref={ref}>
             <span
                 style={{
+                    transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
                     left: isInView ? "5%" : "70%",
@@ -496,6 +497,7 @@ export function SectionImgMosaic2({ children }) {
         <section className='animeProjects' ref={ref}>
             <span
                 style={{
+                    transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
                     right: isInView ? "5%" : "70%",
@@ -516,6 +518,7 @@ export function SectionImgMosaic3({ children }) {
         <section className='animeProjects' ref={ref}>
             <span
                 style={{
+                    transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
                     right: isInView ? "5%" : "70%",
@@ -536,6 +539,7 @@ export function SectionImgMosaic4({ children }) {
         <section className='animeProjects' ref={ref}>
             <span
                 style={{
+                    transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
                     left: isInView ? "5%" : "70%",
@@ -548,3 +552,4 @@ export function SectionImgMosaic4({ children }) {
         </section >
     )
 }
+

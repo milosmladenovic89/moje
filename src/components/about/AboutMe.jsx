@@ -9,8 +9,9 @@ import { SectionSpanBottom, SectionSpanBottom2 } from '../homePage/HomeFunctions
 
 
 export default function AboutMe() {
-  const [displayed, updateDisplay] = useState("");
   const [time, setTime] = useState(false)
+
+  const [displayed, updateDisplay] = useState("");
   const refText = useRef()
 
   const message = " Freelance/ Frontend/ Developer/ Based in/ Serbia"
@@ -84,7 +85,7 @@ export default function AboutMe() {
         <div className='hello-container' >
 
           <p className='animated-text-container' >
-            <span className="animated-text">{displayed}</span>
+            <span  className="animated-text">{displayed}</span>
           </p>
 
           <div className='text-transparent-aboutPage-container'>

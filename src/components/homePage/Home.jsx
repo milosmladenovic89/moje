@@ -13,6 +13,8 @@ import { Logo } from './Logo'
 
 
 
+
+
 export default function Homepage() {
   const [mobile, setMobile] = useState(window.innerWidth)
   const [img, setImg] = useState('bg-1')
@@ -21,11 +23,13 @@ export default function Homepage() {
   const [hoverText, setHoverText] = useState(false)
   const [hoverText2, setHoverText2] = useState(false)
   const [hoverText3, setHoverText3] = useState(false)
+  const [hover0, setHover0] = useState(false)
   const [hoverCircle, setHoverCircle] = useState(false)
   const [hoverArrow, setHoverArrow] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: -120, y: -120 })
   const [timer, setTimer] = useState(false)
   const [loadTime, setLoadTime] = useState(false)
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -83,7 +87,12 @@ export default function Homepage() {
       window.removeEventListener('resize', mobileWidth)
     }
   }, [])
-
+  function changeHover0() {
+    setHover0(true)
+  }
+  function changeHover01() {
+    setHover0(false)
+  }
   function changeHover() {
     setHover(true)
   }
@@ -141,6 +150,9 @@ export default function Homepage() {
   }, [])
 
   let text = 'Milos Mladenovic - Frontend Developer'.split('')
+
+
+
   return (
     <div className="main" id='main'>
       <div id='main33'>
@@ -348,6 +360,96 @@ export default function Homepage() {
 
             </SectionHr>
           </div>
+
+
+
+          <div className='mosaic-hrContainer'>
+            <SectionHr>
+              <hr className='hr' />
+            </SectionHr>
+          </div>
+
+
+          <div className="img-cont-main" onMouseOver={changeHover0} onMouseOut={changeHover01}>
+
+            {mobile > 600 && (
+              <SectionText3Left>
+                <AnimatePresence>
+                  <h2 className="div-desktop-text-left">Plants</h2>
+                  {hover0 && <motion.p className='desktop-description'
+                    key={"box05"}
+                    transition={{ duration: 0.5 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.6 } }}
+                  >Plant shop</motion.p>}
+
+                  {hover0 && <motion.p className='desktop-description'
+                    key={"box06"}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.4 } }}
+                  >Cool design</motion.p>}
+
+                  {hover0 && <motion.p className='desktop-description'
+                    key={"box07"}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    initial={{ x: -200, opacity: 0, scale: 0 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -200, opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.2 } }}
+
+                  >Awesome animations</motion.p>}
+                </AnimatePresence>
+              </SectionText3Left>
+            )}
+
+
+            <a href='http://test2.milosmladenovic.rs' className='home-links-toProject'>
+              <div className="img-container img-container-plants">
+                <SectionHover>
+                  <h2 className='h2-quiz-left'>Plants</h2>
+                </SectionHover>
+
+                <SectionImg2></SectionImg2>
+              </div>
+            </a>
+
+
+          </div>
+
+          {mobile < 600 && (
+            <SectionText3Left>
+              <h2 className="div-mobile-text">Plants</h2>
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Weather app</p>
+              </SectionText3MobileLeft>
+
+              <SectionText3MobileRight>
+                <p className='desktop-description'>  Weather and time Api</p>
+              </SectionText3MobileRight>
+
+              <SectionText3MobileLeft>
+                <p className='desktop-description'>Current time & weather worldwide</p>
+              </SectionText3MobileLeft>
+
+
+            </SectionText3Left>
+          )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           <div className='mosaic-hrContainer'>
@@ -715,8 +817,10 @@ export default function Homepage() {
 
           <div className='show-on-desktop-only'>
 
+
+
             <div className='showOnHover-container'>
-              <p id='para1' className='fonts hovered-paragraph' onMouseOver={hoveredText} onMouseOut={hoveredTextOut}>Lorem ipsum dolor sit amet.
+              <p id='para1' className='fonts hovered-paragraph' onMouseOver={hoveredText} onMouseOut={hoveredTextOut}>Plants Webshop
                 <span
                   style={{ transform: `translateX(${mousePosition.x}px)` }}
                   className={hoverText ? 'follow-img' : 'follow-img2'} >
@@ -724,7 +828,7 @@ export default function Homepage() {
               </p>
 
 
-              <p id='para2' className='fonts hovered-paragraph' onMouseOver={hoveredText2} onMouseOut={hoveredTextOut2}>Lorem ipsum dolor sit amet.
+              <p id='para2' className='fonts hovered-paragraph' onMouseOver={hoveredText2} onMouseOut={hoveredTextOut2}>Memes generator
                 <span
                   style={{ transform: `translateX(${mousePosition.x}px)` }}
                   className={hoverText2 ? 'follow-img-second' : 'follow-img-second2'} >
@@ -732,7 +836,7 @@ export default function Homepage() {
               </p>
 
 
-              <p id='para3' className='fonts hovered-paragraph' onMouseOver={hoveredText3} onMouseOut={hoveredTextOut3}>Lorem ipsum dolor sit amet.
+              <p id='para3' className='fonts hovered-paragraph' onMouseOver={hoveredText3} onMouseOut={hoveredTextOut3}>Mini quiz app
                 <span
                   style={{ transform: `translateX(${mousePosition.x}px)` }}
                   className={hoverText3 ? 'follow-img-third' : 'follow-img-third2'} >

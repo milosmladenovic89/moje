@@ -797,6 +797,16 @@
         align-items: center;
     }
     
+    .img-container-plants {
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        background-image: url('../images/plants-desktop.jpg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
     .img-container:hover .h2-quiz {
         -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
         clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
@@ -994,7 +1004,7 @@
         height: 150px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -225%;
         z-index: -1;
     }
     
@@ -1006,7 +1016,7 @@
         transition: 0.1s all;
         transform: translate(-50%, -50%);
         top: -70%;
-        left: -110%;
+        left: -225%;
     }
     
     .follow-img-second {
@@ -1019,7 +1029,7 @@
         height: 150px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -205%;
         z-index: -1;
     }
     
@@ -1030,7 +1040,7 @@
         height: 0px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -205%;
     }
     
     .follow-img-third {
@@ -1043,7 +1053,7 @@
         height: 150px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -280%;
         z-index: -1;
     }
     
@@ -1054,7 +1064,7 @@
         height: 0px;
         transition: 0.1s all !important;
         top: -70%;
-        left: -110%;
+        left: -280%;
     }
     
     .hovered-paragraph:hover {
