@@ -7,7 +7,7 @@ import {
   SectionText0, SectionText3, SectionText3MobileLeft, SectionText3MobileRight, SectionSpanBottom,
   SectionText3Left, SectionImg2, SectionHr, SectionHrRightToLeft, SectionSpan, SectionSpan2,
   SectionSpanBottom2, SectionHover, SectionProjects, SectionProjects2, SectionProjects3, SectionProjects4,
-  SectionProjects5, SectionProjects6, SectionHrLast, SectionText03, SectionText01, SectionText02, SectionText04, SectionImgMosaic1, SectionImgMosaic4, SectionImgMosaic2, SectionImgMosaic3
+  SectionProjects5, SectionProjects6, SectionHrLast, SectionText03, SectionText01, SectionText02, SectionText04, SectionImgMosaic1, SectionImgMosaic4, SectionImgMosaic2, SectionImgMosaic3, SectionImgMosaic5
 } from './HomeFunctions'
 import { Logo } from './Logo'
 
@@ -354,6 +354,10 @@ export default function Homepage() {
             <SectionImgMosaic4>
               <div className='m4 m4-homePage'></div>
             </SectionImgMosaic4>
+
+            <SectionImgMosaic5>
+              <div className='m5 m5-homePage'></div>
+            </SectionImgMosaic5>
 
 
             <SectionHr>

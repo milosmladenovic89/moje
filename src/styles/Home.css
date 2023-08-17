@@ -81,6 +81,14 @@
         bottom: 0;
     }
     
+    .m5-homePage {
+        position: absolute;
+        width: 320px;
+        height: 225px;
+        left: 0;
+        bottom: 0;
+    }
+    
     .animeHr {
         display: flex;
         overflow: hidden;
@@ -1109,6 +1117,14 @@
     .show-on-desktop-only {
         display: none;
     }
+    
+    .m1-homePage:hover,
+    .m2-homePage:hover,
+    .m3-homePage:hover,
+    .m4-homePage:hover,
+    .m5-homePage:hover {
+        box-shadow: 3px 3px 3px black;
+    }
     /*************************************************************** Media Query ****************************************************************/
     
     @media only screen and (min-width:1400px) {
@@ -1127,7 +1143,8 @@
         .m1-homePage,
         .m2-homePage,
         .m3-homePage,
-        .m4-homePage {
+        .m4-homePage,
+        .m5-homePage {
             width: 120px;
             height: 75px;
         }

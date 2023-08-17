@@ -476,6 +476,7 @@ export function SectionImgMosaic1({ children }) {
         <section className='animeProjects' ref={ref}>
             <span
                 style={{
+                    zIndex: 1000000,
                     transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
@@ -497,6 +498,7 @@ export function SectionImgMosaic2({ children }) {
         <section className='animeProjects' ref={ref}>
             <span
                 style={{
+                    zIndex: 1000000,
                     transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
@@ -518,6 +520,7 @@ export function SectionImgMosaic3({ children }) {
         <section className='animeProjects' ref={ref}>
             <span
                 style={{
+                    zIndex: 1000000,
                     transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
@@ -539,6 +542,7 @@ export function SectionImgMosaic4({ children }) {
         <section className='animeProjects' ref={ref}>
             <span
                 style={{
+                    zIndex: 1000000,
                     transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
@@ -552,4 +556,35 @@ export function SectionImgMosaic4({ children }) {
         </section >
     )
 }
+export function SectionImgMosaic5({ children }) {
+    const ref = useRef(null)
+    const [width, setWidth] = useState(window.innerWidth)
+    useEffect(() => {
+        const winWidth = () => {
+            setWidth(window.innerWidth)
+        }
+        window.addEventListener("resize", winWidth)
 
+        return () => {
+            window.removeEventListener("resize", winWidth)
+        }
+    }, [])
+    const isInView = useInView(ref, { amount: 1 })
+    return (
+        <section className='animeProjects' ref={ref}>
+            <span
+                style={{
+                    zIndex: 1000000,
+                    transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
+                    opacity: isInView ? 1 : 0,
+                    position: "absolute",
+                    left: (isInView && width > 768)? "40%" : (isInView && width < 768) ? "32%" : "20%",
+                    top: isInView ? "40%" : "20%",
+                    transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section >
+    )
+}
