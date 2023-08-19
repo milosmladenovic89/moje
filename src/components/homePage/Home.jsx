@@ -339,24 +339,24 @@ export default function Homepage() {
 
 
             <SectionImgMosaic1>
-              <div className='m1 m1-homePage'></div>
+              <div className=' m1-homePage img1-mosaic img-hover'></div>
             </SectionImgMosaic1>
 
             <SectionImgMosaic2>
-              <div className='m2 m2-homePage'></div>
+              <div className=' m2-homePage img2-mosaic img-hover'></div>
             </SectionImgMosaic2>
 
             <SectionImgMosaic3>
-              <div className='m3 m3-homePage'></div>
+              <div className=' m3-homePage img3-mosaic img-hover'></div>
             </SectionImgMosaic3>
 
 
             <SectionImgMosaic4>
-              <div className='m4 m4-homePage'></div>
+              <div className=' m4-homePage img4-mosaic img-hover'></div>
             </SectionImgMosaic4>
 
             <SectionImgMosaic5>
-              <div className='m5 m5-homePage'></div>
+              <div className=' m5-homePage img5-mosaic img-hover'></div>
             </SectionImgMosaic5>
 
 
@@ -410,7 +410,7 @@ export default function Homepage() {
 
 
             <a href='http://test2.milosmladenovic.rs' className='home-links-toProject'>
-              <div className="img-container img-container-plants">
+              <div className="img-container-plants img-container ">
                 <SectionHover>
                   <h2 className='h2-quiz-left'>Plants</h2>
                 </SectionHover>

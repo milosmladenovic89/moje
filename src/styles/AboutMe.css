@@ -108,7 +108,7 @@
     font-weight: 500;
     font-family: 'DrukWide-Super-Trial';
     -webkit-text-stroke: 1px white;
-   
+
     position: relative;
 }
 
@@ -193,6 +193,7 @@
         z-index: 10000;
         position: relative;
     }
+
     .footer-left-container-about {
         display: flex;
         justify-content: space-between;
@@ -200,16 +201,20 @@
         margin: 0 auto;
         margin-bottom: 30px;
     }
+
     .hashLink-about {
         padding: 0;
     }
+
     .link-nav {
         position: absolute;
         right: 25%;
     }
+
     .link-nav2 {
         position: absolute;
     }
+
     .about-page-text-me {
         width: 90vw;
         margin: 0 auto;
@@ -217,6 +222,7 @@
         font-size: 20px;
         font-family: sans-serif;
     }
+
     .p-about-me-page {
         width: 90%;
         padding-bottom: 20px;
@@ -224,6 +230,7 @@
         margin-top: 20vh;
         font-size: 16px;
     }
+
     .p-about-me-page2 {
         width: 90%;
         padding-bottom: 20px;
@@ -231,13 +238,24 @@
         font-size: 16px;
         margin-bottom: 10vh;
     }
+
     .largeText-technology {
         width: 90%;
         margin: 10vw auto;
         font-size: 18px;
     }
+
     .link-nav,
     .link-nav2 {
         font-size: 17px;
+    }
+
+    .container-img {
+        position: absolute;
+        right: 0;
+        background: url('../images/S-Profile-Image-BG-1-mobile.png');
+        z-index: 1;
+     
+        top: 0;
     }
 }
