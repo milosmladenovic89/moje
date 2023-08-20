@@ -339,24 +339,35 @@ export default function Homepage() {
 
 
             <SectionImgMosaic1>
-              <div className=' m1-homePage img1-mosaic img-hover'></div>
+              <HashLink to={'#mosaic-tenzi'}>
+                <div className='m1-homePage img1-mosaic img-hover'></div>
+              </HashLink>
             </SectionImgMosaic1>
 
             <SectionImgMosaic2>
-              <div className=' m2-homePage img2-mosaic img-hover'></div>
+              <HashLink to={"#mosaic-plants"}>
+                <div className='m2-homePage img2-mosaic img-hover'></div>
+              </HashLink>
             </SectionImgMosaic2>
 
             <SectionImgMosaic3>
-              <div className=' m3-homePage img3-mosaic img-hover'></div>
+              <HashLink to={'#mosaic-weather'}>
+                <div className='m3-homePage img3-mosaic img-hover'></div>
+              </HashLink>
             </SectionImgMosaic3>
 
 
             <SectionImgMosaic4>
-              <div className=' m4-homePage img4-mosaic img-hover'></div>
+              <HashLink to={'#mosaic-quiz'}>
+              <div className='m4-homePage img4-mosaic img-hover'></div>
+              </HashLink>
+            
             </SectionImgMosaic4>
 
             <SectionImgMosaic5>
-              <div className=' m5-homePage img5-mosaic img-hover'></div>
+              <HashLink to={'#mosaic-memes'}>
+              <div className='m5-homePage img5-mosaic img-hover'></div>
+              </HashLink>
             </SectionImgMosaic5>
 
 
@@ -410,7 +421,7 @@ export default function Homepage() {
 
 
             <a href='http://test2.milosmladenovic.rs' className='home-links-toProject'>
-              <div className="img-container-plants img-container ">
+              <div className="img-container-plants img-container" id='mosaic-plants'>
                 <SectionHover>
                   <h2 className='h2-quiz-left'>Plants</h2>
                 </SectionHover>
@@ -464,7 +475,7 @@ export default function Homepage() {
 
 
           <div className="img-cont-main" onMouseOver={changeHover} onMouseOut={changeHover2}>
-            <Link to={"./quiz"} className='home-links-toProject' >
+            <Link to={"./quiz"} className='home-links-toProject' id='mosaic-quiz' >
               <div className="img-container">
                 <SectionHover>
                   <h2 className='h2-quiz'>Quiz</h2>
@@ -598,7 +609,7 @@ export default function Homepage() {
             )}
 
 
-            <Link to={"./weather"} className='home-links-toProject'>
+            <Link to={"./weather"} className='home-links-toProject' id='mosaic-weather'>
               <div className="img-container img-container-weather">
                 <SectionHover>
                   <h2 className='h2-quiz-left'>Weather</h2>
@@ -639,7 +650,7 @@ export default function Homepage() {
           </div>
 
           <div className="img-cont-main" onMouseOver={changeHover} onMouseOut={changeHover2}>
-            <Link to={"./memes"} className='home-links-toProject'>
+            <Link to={"./memes"} className='home-links-toProject' id='mosaic-memes'>
               <div className="img-container img-container-memes">
                 <SectionHover>
                   <h2 className='h2-quiz'>Memes</h2>
@@ -734,11 +745,11 @@ export default function Homepage() {
           </div>
 
 
-          <div className="img-cont-main" onMouseOver={changeHover3} onMouseOut={changeHover4}>
+          <div className="img-cont-main" onMouseOver={changeHover3} onMouseOut={changeHover4} >
 
             {mobile > 600 && (
               <SectionText3Left>
-                <h2 className="div-desktop-text-left">Tenzi</h2>
+                <h2 className="div-desktop-text-left" >Tenzi</h2>
                 <AnimatePresence>
 
                   {hover2 && <motion.p className='desktop-description'
@@ -778,7 +789,7 @@ export default function Homepage() {
             )}
 
 
-            <Link to={"./tenzi"} className='home-links-toProject'>
+            <Link to={"./tenzi"} className='home-links-toProject' id='mosaic-tenzi'>
               <div className="img-container img-container-tenzi">
                 <SectionHover>
                   <h2 className='h2-quiz-left'>Tenzi</h2>
@@ -813,7 +824,7 @@ export default function Homepage() {
             </SectionText3Left>
           )}
 
-          <div className='hr-container' >
+          <div className='hr-container hr-last-homepage' >
             <SectionHrLast>
               <hr className='hr' />
             </SectionHrLast>
@@ -821,31 +832,35 @@ export default function Homepage() {
 
           <div className='show-on-desktop-only'>
 
-
+            <p className='favorite-work'>-My favorite-</p>
 
             <div className='showOnHover-container'>
-              <p id='para1' className='fonts hovered-paragraph' onMouseOver={hoveredText} onMouseOut={hoveredTextOut}>Plants Webshop
-                <span
-                  style={{ transform: `translateX(${mousePosition.x}px)` }}
-                  className={hoverText ? 'follow-img' : 'follow-img2'} >
-                </span>
-              </p>
+              <a href='http://test2.milosmladenovic.rs' className='favorite-work-plants'>
+                <p id='para1' className='fonts hovered-paragraph' onMouseOver={hoveredText} onMouseOut={hoveredTextOut}>Plants Webshop
+                  <span
+                    style={{ transform: `translateX(${mousePosition.x}px)` }}
+                    className={hoverText ? 'follow-img' : 'follow-img2'} >
+                  </span>
+                </p>
+              </a>
 
+              <Link to={'./memes'} className='favorite-link-decoration'>
+                <p id='para2' className='fonts hovered-paragraph' onMouseOver={hoveredText2} onMouseOut={hoveredTextOut2}>Memes generator
+                  <span
+                    style={{ transform: `translateX(${mousePosition.x}px)` }}
+                    className={hoverText2 ? 'follow-img-second' : 'follow-img-second2'} >
+                  </span>
+                </p>
+              </Link>
 
-              <p id='para2' className='fonts hovered-paragraph' onMouseOver={hoveredText2} onMouseOut={hoveredTextOut2}>Memes generator
-                <span
-                  style={{ transform: `translateX(${mousePosition.x}px)` }}
-                  className={hoverText2 ? 'follow-img-second' : 'follow-img-second2'} >
-                </span>
-              </p>
-
-
-              <p id='para3' className='fonts hovered-paragraph' onMouseOver={hoveredText3} onMouseOut={hoveredTextOut3}>Mini quiz app
-                <span
-                  style={{ transform: `translateX(${mousePosition.x}px)` }}
-                  className={hoverText3 ? 'follow-img-third' : 'follow-img-third2'} >
-                </span>
-              </p>
+              <Link to={'./quiz'} className='favorite-link-decoration'>
+                <p id='para3' className='fonts hovered-paragraph' onMouseOver={hoveredText3} onMouseOut={hoveredTextOut3}>Mini quiz app
+                  <span
+                    style={{ transform: `translateX(${mousePosition.x}px)` }}
+                    className={hoverText3 ? 'follow-img-third' : 'follow-img-third2'} >
+                  </span>
+                </p>
+              </Link>
             </div>
 
           </div>
