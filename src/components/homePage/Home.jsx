@@ -15,6 +15,7 @@ import { Logo } from './Logo'
 
 
 
+
 export default function Homepage({ mouseEnter, mouseLeave }) {
   const [mobile, setMobile] = useState(window.innerWidth)
   const [img, setImg] = useState('bg-1')
@@ -157,7 +158,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
 
   return (
-    <div className="main" id='main 'onMouseEnter={mouseLeave}>
+    <div className="main" id='main' onMouseEnter={mouseLeave}>
 
       <div id='main33'>
         <motion.div
@@ -177,7 +178,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
                 </Link>
               </span>
               <span style={{ marginLeft: '100px' }}>
-                <Link className="linkNav2" to="/" onMouseEnter={mouseLeave} onMouseLeave={mouseLeave}>
+                <Link className="linkNav2" to="/">
                   Home
                 </Link>
               </span>
@@ -235,7 +236,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
                         }}
                       >
 
-                        <i className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }}
+                        <i onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} className="icono-arrow1-left-down" style={{ color: hoverArrow || hoverCircle ? "white" : "black" }}
                         ></i>
                       </motion.div>
                     }
@@ -344,7 +345,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
             <SectionImgMosaic1>
               <HashLink to={'#mosaic-tenzi'}>
-                <div className='m1-homePage img1-mosaic img-hover'></div>
+                <div className='m1-homePage img1-mosaic img-hover' ></div>
               </HashLink>
             </SectionImgMosaic1>
 
@@ -389,7 +390,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
           </div>
 
 
-          <div className="img-cont-main" onMouseOver={changeHover0} onMouseOut={changeHover01}>
+          <div className="img-cont-main" onMouseOver={changeHover0} onMouseOut={changeHover01} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
 
             {mobile > 600 && (
               <SectionText3Left>
@@ -432,10 +433,17 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
                 <SectionImg2></SectionImg2>
               </div>
+
             </a>
 
 
+
+
+
+
+
           </div>
+
 
           {mobile < 600 && (
             <SectionText3Left>
@@ -478,7 +486,8 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
           </div>
 
 
-          <div className="img-cont-main" onMouseOver={changeHover} onMouseOut={changeHover2}>
+          <div className="img-cont-main" onMouseOver={changeHover} onMouseOut={changeHover2} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+
             <Link to={"./quiz"} className='home-links-toProject' id='mosaic-quiz' >
               <div className="img-container">
                 <SectionHover>
@@ -487,7 +496,9 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
                 <SectionImg2></SectionImg2>
               </div>
+          
             </Link>
+
 
             {mobile > 600 && (
 
@@ -578,7 +589,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
           </div>
 
 
-          <div className="img-cont-main" onMouseOver={changeHover3} onMouseOut={changeHover4}>
+          <div className="img-cont-main" onMouseOver={changeHover3} onMouseOut={changeHover4} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
 
             {mobile > 600 && (
               <SectionText3Left>
@@ -621,6 +632,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
                 <SectionImg2></SectionImg2>
               </div>
+            
             </Link>
 
 
@@ -653,7 +665,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
             </SectionHr>
           </div>
 
-          <div className="img-cont-main" onMouseOver={changeHover} onMouseOut={changeHover2}>
+          <div className="img-cont-main" onMouseOver={changeHover} onMouseOut={changeHover2} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
             <Link to={"./memes"} className='home-links-toProject' id='mosaic-memes'>
               <div className="img-container img-container-memes">
                 <SectionHover>
@@ -662,6 +674,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
                 <SectionImg2></SectionImg2>
               </div>
+          
             </Link>
 
             {mobile > 600 && (
@@ -749,7 +762,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
           </div>
 
 
-          <div className="img-cont-main" onMouseOver={changeHover3} onMouseOut={changeHover4} >
+          <div className="img-cont-main" onMouseOver={changeHover3} onMouseOut={changeHover4} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} >
 
             {mobile > 600 && (
               <SectionText3Left>
@@ -801,6 +814,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
                 <SectionImg2></SectionImg2>
               </div>
+             
             </Link>
 
 
@@ -889,13 +903,13 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
           <footer id='footer'>
             <div className='footer-left-container'>
 
-              <a className='linkedin-link' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
-              <Link className='linkedin-link' to='/MilosMladenovic_CV.pdf' target="_blank"> Curriculum Vitae</Link>
-              <a className='linkedin-link' href="mailto:milos89mladenovic@gmail.com">Email</a>
+              <a className='linkedin-link' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} >LinkedIn</a>
+              <Link className='linkedin-link' to='/MilosMladenovic_CV.pdf' target="_blank" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}> Curriculum Vitae</Link>
+              <a className='linkedin-link' href="mailto:milos89mladenovic@gmail.com" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>Email</a>
 
             </div>
 
-            <HashLink className='hashLink' to={"#main"}>Back to top ⇧</HashLink>
+            <HashLink className='hashLink' to={"#main"} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>Back to top ⇧</HashLink>
 
           </footer>
 

@@ -8,7 +8,7 @@ import { HashLink } from 'react-router-hash-link'
 import { SectionSpanBottom, SectionSpanBottom2 } from '../homePage/HomeFunctions';
 
 
-export default function AboutMe({ mouseEnterAbout2, mouseLeaveAbout2,mouseEnterAbout,mouseLeaveAbout }) {
+export default function AboutMe({mouseEnterAbout,mouseLeaveAbout }) {
   const [time, setTime] = useState(false)
 
   const [displayed, updateDisplay] = useState("");
@@ -59,7 +59,7 @@ export default function AboutMe({ mouseEnterAbout2, mouseLeaveAbout2,mouseEnterA
 
   return (
 
-    <div id='main2' className='About-page-main-container' style={{ backgroundColor: time ? "black" : '#70b5dd' }}  onMouseEnter={mouseLeaveAbout2}>
+    <div id='main2' className='About-page-main-container' style={{ backgroundColor: time ? "black" : '#70b5dd' }}  onMouseEnter={mouseLeaveAbout}>
       {time}<motion.div
         className="div-about-container"
         initial={{ y: -1000 }}
@@ -73,7 +73,7 @@ export default function AboutMe({ mouseEnterAbout2, mouseLeaveAbout2,mouseEnterA
           </div>
 
           <div>
-            <Link className="link-nav" to="/about"  onMouseEnter={mouseEnterAbout2} onMouseLeave={mouseLeaveAbout2}>About</Link>
+            <Link className="link-nav" to="/about">About</Link>
             <Link className="link-nav2" to="/" onMouseEnter={mouseEnterAbout} onMouseLeave={mouseLeaveAbout}>Home</Link>
           </div>
 
@@ -173,10 +173,10 @@ export default function AboutMe({ mouseEnterAbout2, mouseLeaveAbout2,mouseEnterA
               </p>
             </Section>
 
-            <p className='largeText-technology'>
+            <div className='largeText-technology'>
               <SectionShowColor1><span >JAVASCRIPT, </span></SectionShowColor1>
               <SectionShowColor2><span>REACT, </span></SectionShowColor2> <SectionShowColor3><span>TYPESCRIPT, </span></SectionShowColor3><SectionShowColor4><span>NEXTJS, </span></SectionShowColor4>  <SectionShowColor5><span>CSS3, </span></SectionShowColor5><SectionShowColor6><span>HTML5, </span></SectionShowColor6>   <SectionShowColor5><span>ADOBE PHOTOSHOP, </span></SectionShowColor5> <SectionShowColor4><span>ADOBE ILLUSTRATOR, </span></SectionShowColor4> <SectionShowColor3></SectionShowColor3><SectionShowColor6><span>BOOTSTRAP, </span></SectionShowColor6> <SectionShowColor2><span>FRAMER-MOTION, </span></SectionShowColor2> <SectionShowColor1><span >GITHUB</span></SectionShowColor1>
-            </p>
+            </div>
 
           </div>
 
@@ -199,13 +199,13 @@ export default function AboutMe({ mouseEnterAbout2, mouseLeaveAbout2,mouseEnterA
 
             <div className='footer-left-container-about'>
 
-              <a className='linkedin-link-about' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" >LinkedIn</a>
-              <Link className='linkedin-link-about' to='/MilosMladenovic_CV.pdf' target="_blank"> Curriculum Vitae</Link>
-              <a className='linkedin-link-about' href="mailto:milos89mladenovic@gmail.com">Email</a>
+              <a className='linkedin-link-about' href="https://www.linkedin.com/in/milos-mladenovic-8144b6244" onMouseEnter={mouseEnterAbout} onMouseLeave={mouseLeaveAbout}>LinkedIn</a>
+              <Link className='linkedin-link-about' to='/MilosMladenovic_CV.pdf' target="_blank" onMouseEnter={mouseEnterAbout} onMouseLeave={mouseLeaveAbout}> Curriculum Vitae</Link>
+              <a className='linkedin-link-about' href="mailto:milos89mladenovic@gmail.com" onMouseEnter={mouseEnterAbout} onMouseLeave={mouseLeaveAbout}>Email</a>
 
             </div>
 
-            <HashLink className='hashLink-about' to={"#main2"}>Back to top ⇧</HashLink>
+            <HashLink className='hashLink-about' to={"#main2"} onMouseEnter={mouseEnterAbout} onMouseLeave={mouseLeaveAbout}>Back to top ⇧</HashLink>
 
           </footer>
         </div>

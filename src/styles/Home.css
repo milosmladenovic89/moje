@@ -7,16 +7,19 @@
         -webkit-font-smoothing: antialiased;
 
     }
-
+   
+   
+  
     .cursor {
-        background-color: wheat;
-        height: 32px;
-        width: 32px;
+        border: 2px solid rgb(231, 78, 7);
+        height: 14px;
+        width:14px;
         border-radius: 50%;
         position: fixed;
         left: 0;
         top: 0;
         pointer-events: none;
+        z-index: 20000;
     }
 
     @font-face {
@@ -863,7 +866,7 @@
 
     .img-cont-main {
         width: 80vw;
-        margin: 20vh auto;
+        margin: 35vh auto;
         display: flex;
         justify-content: center;
         overflow: hidden;
@@ -1267,7 +1270,9 @@
         .hr-last-homepage {
             display: none;
         }
-
+        .cursor{
+            display: none;
+        }
         .m1-homePage,
         .m2-homePage,
         .m3-homePage,

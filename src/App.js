@@ -39,17 +39,17 @@ export default function App() {
 
     const variants = {
         default: {
-            x: mousePosition.x - 16,
-            y: mousePosition.y - 16,
+            x: mousePosition.x - 7,
+            y: mousePosition.y - 7,
+            backgroundColor: "rgb(231, 78, 7)"
 
         },
         text: {
-            height: 150,
-            width: 150,
-            x: mousePosition.x - 75,
-            y: mousePosition.y - 75,
-            backgroundColor: "rgb(255, 0, 255)",
-            // mixBlendMode: "difference",
+            height: 40,
+            width: 40,
+            x: mousePosition.x - 20,
+            y: mousePosition.y - 20,
+            //mixBlendMode: "difference",
         }
 
     }
@@ -163,7 +163,7 @@ export default function App() {
                 <Routes>
 
                     <Route path="/" element={<Home mouseEnter={mouseEnterApp} mouseLeave={mouseLeaveApp} />} />
-                    <Route path="/about" element={< AboutMe mouseEnterAbout2={mouseLeaveApp} mouseLeaveAbout2={mouseLeaveApp} mouseEnterAbout={mouseEnterApp} mouseLeaveAbout={mouseLeaveApp} />} />
+                    <Route path="/about" element={< AboutMe  mouseEnterAbout={mouseEnterApp} mouseLeaveAbout={mouseLeaveApp} />} />
                     <Route path="https://www.linkedin.com/in/milos-mladenovic-8144b6244" />
                     <Route path="/quiz/" element={<Quiz />} />
                     <Route path="/memes" element={<Memes />} />
