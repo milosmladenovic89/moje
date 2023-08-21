@@ -8,7 +8,7 @@ import { HashLink } from 'react-router-hash-link'
 import { SectionSpanBottom, SectionSpanBottom2 } from '../homePage/HomeFunctions';
 
 
-export default function AboutMe() {
+export default function AboutMe({ mouseEnterAbout2, mouseLeaveAbout2,mouseEnterAbout,mouseLeaveAbout }) {
   const [time, setTime] = useState(false)
 
   const [displayed, updateDisplay] = useState("");
@@ -17,7 +17,6 @@ export default function AboutMe() {
   const message = " Freelance/ Frontend/ Developer/ Based in/ Serbia"
 
   let delay = 25
-
 
 
   useEffect(() => {
@@ -60,7 +59,7 @@ export default function AboutMe() {
 
   return (
 
-    <div id='main2' className='About-page-main-container' style={{ backgroundColor: time ? "black" : '#70b5dd' }}>
+    <div id='main2' className='About-page-main-container' style={{ backgroundColor: time ? "black" : '#70b5dd' }}  onMouseEnter={mouseLeaveAbout2}>
       {time}<motion.div
         className="div-about-container"
         initial={{ y: -1000 }}
@@ -74,8 +73,8 @@ export default function AboutMe() {
           </div>
 
           <div>
-            <Link className="link-nav" to="/about">About</Link>
-            <Link className="link-nav2" to="/" >Home</Link>
+            <Link className="link-nav" to="/about"  onMouseEnter={mouseEnterAbout2} onMouseLeave={mouseLeaveAbout2}>About</Link>
+            <Link className="link-nav2" to="/" onMouseEnter={mouseEnterAbout} onMouseLeave={mouseLeaveAbout}>Home</Link>
           </div>
 
         </div>
@@ -85,7 +84,7 @@ export default function AboutMe() {
         <div className='hello-container' >
 
           <p className='animated-text-container' >
-            <span  className="animated-text">{displayed}</span>
+            <span className="animated-text">{displayed}</span>
           </p>
 
           <div className='text-transparent-aboutPage-container'>
@@ -121,7 +120,7 @@ export default function AboutMe() {
 
         </div>
 
-   
+
       </motion.div>
 
       {time &&

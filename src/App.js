@@ -20,6 +20,57 @@ export default function App() {
     const [load, setLoad] = useState(true)
     const [load2, setLoad2] = useState(false)
     const [random, setRandom] = useState('0')
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+    const [cursorVariant, setCursorVariant] = useState("default")
+    const [enter, setEnter] = useState(false)
+
+    function mouseEnterApp() {
+        setEnter(true)
+        setCursorVariant("text")
+    }
+    function mouseLeaveApp() {
+        setEnter(false)
+        setCursorVariant("default")
+    }
+
+
+
+
+
+    const variants = {
+        default: {
+            x: mousePosition.x - 16,
+            y: mousePosition.y - 16,
+
+        },
+        text: {
+            height: 150,
+            width: 150,
+            x: mousePosition.x - 75,
+            y: mousePosition.y - 75,
+            backgroundColor: "rgb(255, 0, 255)",
+            // mixBlendMode: "difference",
+        }
+
+    }
+
+    useEffect(() => {
+
+        const MousePosition = (e) => {
+            const { clientX, clientY } = e
+            setMousePosition({ x: clientX, y: clientY })
+
+        }
+        window.addEventListener("mousemove", MousePosition)
+
+        return () => {
+            window.removeEventListener("mousemove", MousePosition)
+        }
+
+    }, [])
+
+
+
 
     useEffect(() => {
         const animation = animate(count, 100, { duration: 1.5 })
@@ -48,6 +99,8 @@ export default function App() {
             clearTimeout(timer)
         }
     }, [])
+
+
     return (
         <div>
             {load ? (
@@ -104,18 +157,34 @@ export default function App() {
                 </motion.div>
             )}
 
-            {load2 && <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={< AboutMe />} />
-                <Route path="https://www.linkedin.com/in/milos-mladenovic-8144b6244" />
-                <Route path="/quiz/" element={<Quiz />} />
-                <Route path="/memes" element={<Memes />} />
-                <Route path="/tenzi" element={<Tenzi />} />
-                <Route path="/weather" element={<Weather />} />
-                
-            </Routes>}
+            {load2 &&
 
-                <ScrollToTop/>
+
+                <Routes>
+
+                    <Route path="/" element={<Home mouseEnter={mouseEnterApp} mouseLeave={mouseLeaveApp} />} />
+                    <Route path="/about" element={< AboutMe mouseEnterAbout2={mouseLeaveApp} mouseLeaveAbout2={mouseLeaveApp} mouseEnterAbout={mouseEnterApp} mouseLeaveAbout={mouseLeaveApp} />} />
+                    <Route path="https://www.linkedin.com/in/milos-mladenovic-8144b6244" />
+                    <Route path="/quiz/" element={<Quiz />} />
+                    <Route path="/memes" element={<Memes />} />
+                    <Route path="/tenzi" element={<Tenzi />} />
+                    <Route path="/weather" element={<Weather />} />
+
+                </Routes>
+
+
+            }
+
+            <ScrollToTop />
+
+            <motion.div
+                className="cursor"
+                variants={variants}
+                animate={cursorVariant}
+                transition={{ duration: 0, delay: 0 }}
+            >
+
+            </motion.div>
         </div>
 
 

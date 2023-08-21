@@ -15,7 +15,7 @@ import { Logo } from './Logo'
 
 
 
-export default function Homepage() {
+export default function Homepage({ mouseEnter, mouseLeave }) {
   const [mobile, setMobile] = useState(window.innerWidth)
   const [img, setImg] = useState('bg-1')
   const [hover, setHover] = useState(false)
@@ -29,6 +29,7 @@ export default function Homepage() {
   const [mousePosition, setMousePosition] = useState({ x: -120, y: -120 })
   const [timer, setTimer] = useState(false)
   const [loadTime, setLoadTime] = useState(false)
+
 
 
   useEffect(() => {
@@ -153,8 +154,11 @@ export default function Homepage() {
 
 
 
+
+
   return (
-    <div className="main" id='main'>
+    <div className="main" id='main 'onMouseEnter={mouseLeave}>
+
       <div id='main33'>
         <motion.div
           initial={{ y: 1000 }}
@@ -168,12 +172,12 @@ export default function Homepage() {
 
             <div>
               <span >
-                <Link className="linkNav" to="/about" >
+                <Link className="linkNav" to="/about" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
                   About
                 </Link>
               </span>
               <span style={{ marginLeft: '100px' }}>
-                <Link className="linkNav2" to="/">
+                <Link className="linkNav2" to="/" onMouseEnter={mouseLeave} onMouseLeave={mouseLeave}>
                   Home
                 </Link>
               </span>
@@ -359,14 +363,14 @@ export default function Homepage() {
 
             <SectionImgMosaic4>
               <HashLink to={'#mosaic-quiz'}>
-              <div className='m4-homePage img4-mosaic img-hover'></div>
+                <div className='m4-homePage img4-mosaic img-hover'></div>
               </HashLink>
-            
+
             </SectionImgMosaic4>
 
             <SectionImgMosaic5>
               <HashLink to={'#mosaic-memes'}>
-              <div className='m5-homePage img5-mosaic img-hover'></div>
+                <div className='m5-homePage img5-mosaic img-hover'></div>
               </HashLink>
             </SectionImgMosaic5>
 
@@ -900,6 +904,7 @@ export default function Homepage() {
         </div >}
       </div>
       <div className="noise"></div>
+
     </div >
   )
 }
