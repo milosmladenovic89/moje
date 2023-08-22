@@ -578,8 +578,32 @@ export function SectionImgMosaic5({ children }) {
                     transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
                     opacity: isInView ? 1 : 0,
                     position: "absolute",
-                    left: (isInView && width > 768)? "40%" : (isInView && width < 768) ? "32%" : "20%",
+                    left: (isInView && width > 768) ? "40%" : (isInView && width < 768) ? "32%" : "20%",
                     top: isInView ? "40%" : "20%",
+                    transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
+            >
+                {children}
+            </span>
+        </section >
+    )
+}
+
+export function SectionImgMosaic6({ children }) {
+    const ref = useRef(null)
+
+
+    const isInView = useInView(ref, { amount: 1 })
+    return (
+        <section className='animeProjects-arrowDown' ref={ref}>
+            <span
+                style={{
+                    zIndex: 1000000,
+                    transform: isInView ? 'rotate(0deg)scale(1)' : 'perspective(900px)rotateX(180deg)scale(0.1)',
+                    opacity: isInView ? 1 : 0,
+                    position: "absolute",
+                    left: isInView ? "48.5%" : "20%",
+                    top: isInView ? "70%" : "20%",
                     transition: 'all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
             >

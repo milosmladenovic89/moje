@@ -96,9 +96,26 @@
         height: 180px;
         top: 0;
         left: 0;
+
+    }
+
+    .text-inside-img {
+        position: absolute;
+        color: white;
+        opacity: 0;
+        text-shadow: 5px 5px 5px black;
+        font-weight: bold;
+    }
+
+    .img-hover:hover .text-inside-img {
+        opacity: 1;
+        transition: 1.5s ease;
     }
 
     .img-hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
         position: relative;
         padding: 10px 20px;
@@ -143,6 +160,7 @@
             }
         }
     }
+
 
     .m2-homePage {
         position: absolute;
@@ -282,6 +300,7 @@
         background: url('../images/dice-desktop-mobile.jpg');
         background-repeat: no-repeat;
         background-size: cover;
+
     }
 
     .img2-mosaic {
@@ -519,7 +538,7 @@
         animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
         transform: translate3d(0, 0, 0);
         perspective: 1000px;
-        color:red;
+        color: red;
     }
 
     .linkNav2 {
@@ -1045,6 +1064,39 @@
         margin-top: 10vh;
     }
 
+    .animeProjects-arrowDown {
+        display: inline-flex;
+        margin-top: 10vh;
+        font-size: 50px;
+    }
+
+    @keyframes jumpInfinite {
+        0% {
+            transform: translateY(0px);
+            color: black;
+        }
+
+        50% {
+            transform: translateY(50px);
+            color: orangered;
+        }
+
+        100% {
+            transform: translateY(0px);
+            color: black;
+        }
+    }
+
+    #animated-arrow {
+        position: absolute;
+        animation-name: jumpInfinite;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+
+    }
+
+
+
     .animeDescription {
         display: flex;
     }
@@ -1230,9 +1282,11 @@
         color: black;
         padding-right: 20px;
     }
-    .hashLink:hover{
+
+    .hashLink:hover {
         color: red;
     }
+
     .linkedin-link {
         text-decoration: none;
         position: relative;
@@ -1265,7 +1319,7 @@
 
 
 
-    
+
     .show-on-desktop-only {
         display: none;
     }
@@ -1310,6 +1364,13 @@
     }
 
     @media only screen and (max-width:768px) {
+        .img-hover{
+            font-size: 14px;
+        }
+        .animeProjects-arrowDown {
+            display: none;
+        }
+
         .hr-last-homepage {
             display: none;
         }

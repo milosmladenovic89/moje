@@ -7,9 +7,10 @@ import {
   SectionText0, SectionText3, SectionText3MobileLeft, SectionText3MobileRight, SectionSpanBottom,
   SectionText3Left, SectionImg2, SectionHr, SectionHrRightToLeft, SectionSpan, SectionSpan2,
   SectionSpanBottom2, SectionHover, SectionProjects, SectionProjects2, SectionProjects3, SectionProjects4,
-  SectionProjects5, SectionProjects6, SectionHrLast, SectionText03, SectionText01, SectionText02, SectionText04, SectionImgMosaic1, SectionImgMosaic4, SectionImgMosaic2, SectionImgMosaic3, SectionImgMosaic5
+  SectionProjects5, SectionProjects6, SectionHrLast, SectionText03, SectionText01, SectionText02, SectionText04, SectionImgMosaic1, SectionImgMosaic4, SectionImgMosaic2, SectionImgMosaic3, SectionImgMosaic5, SectionImgMosaic6
 } from './HomeFunctions'
 import { Logo } from './Logo'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -345,36 +346,54 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
             <SectionImgMosaic1>
               <HashLink to={'#mosaic-tenzi'}>
-                <div className='m1-homePage img1-mosaic img-hover' ></div>
+                <div className='m1-homePage img1-mosaic img-hover' >
+                  <span className='text-inside-img'>Tenzi game</span>
+                </div>
+
               </HashLink>
             </SectionImgMosaic1>
 
             <SectionImgMosaic2>
               <HashLink to={"#mosaic-plants"}>
-                <div className='m2-homePage img2-mosaic img-hover'></div>
+                <div className='m2-homePage img2-mosaic img-hover'>
+                  <span className='text-inside-img'>Plants shop</span>
+                </div>
               </HashLink>
             </SectionImgMosaic2>
 
             <SectionImgMosaic3>
               <HashLink to={'#mosaic-weather'}>
-                <div className='m3-homePage img3-mosaic img-hover'></div>
+                <div className='m3-homePage img3-mosaic img-hover'>
+                  <span className='text-inside-img'>Weather app</span>
+                </div>
               </HashLink>
             </SectionImgMosaic3>
 
 
             <SectionImgMosaic4>
               <HashLink to={'#mosaic-quiz'}>
-                <div className='m4-homePage img4-mosaic img-hover'></div>
+                <div className='m4-homePage img4-mosaic img-hover'>
+                  <span className='text-inside-img'>Quiz game</span>
+                </div>
               </HashLink>
 
             </SectionImgMosaic4>
 
             <SectionImgMosaic5>
               <HashLink to={'#mosaic-memes'}>
-                <div className='m5-homePage img5-mosaic img-hover'></div>
+                <div className='m5-homePage img5-mosaic img-hover'>
+                  <span className='text-inside-img'>Memes</span>
+                </div>
               </HashLink>
             </SectionImgMosaic5>
 
+            <SectionImgMosaic6>
+              <HashLink to={"#mosaic-plants"}>
+                <span id='animated-arrow'>
+                  <FontAwesomeIcon icon="fa-solid fa-chevron-down" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} />
+                </span>
+              </HashLink>
+            </SectionImgMosaic6>
 
             <SectionHr>
 
