@@ -7,13 +7,35 @@
         -webkit-font-smoothing: antialiased;
 
     }
-   
-   
-  
+
+    @keyframes shake {
+
+        10%,
+        90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+
+        20%,
+        80% {
+            transform: translate3d(2px, 0, 0);
+        }
+
+        30%,
+        50%,
+        70% {
+            transform: translate3d(-2px, 0, 0);
+        }
+
+        40%,
+        60% {
+            transform: translate3d(2px, 0, 0);
+        }
+    }
+
     .cursor {
         border: 2px solid rgb(231, 78, 7);
-        height: 14px;
-        width:14px;
+        height: 12px;
+        width: 12px;
         border-radius: 50%;
         position: fixed;
         left: 0;
@@ -491,6 +513,13 @@
         font-size: 20px;
         right: 10%;
         z-index: 1000 !important;
+    }
+
+    .linkNav:hover {
+        animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+        transform: translate3d(0, 0, 0);
+        perspective: 1000px;
+        color:red;
     }
 
     .linkNav2 {
@@ -990,7 +1019,7 @@
     }
 
     .hr {
-        border-top: 1px solid black;
+        border: 1px solid black;
     }
 
     .anime3 {
@@ -1201,13 +1230,23 @@
         color: black;
         padding-right: 20px;
     }
-
+    .hashLink:hover{
+        color: red;
+    }
     .linkedin-link {
         text-decoration: none;
+        position: relative;
         color: black;
-        z-index: 1000;
+        z-index: 2000 !important;
         padding: 0 20px;
+
     }
+
+    .linkedin-link:hover {
+        color: red;
+
+    }
+
 
     #footer {
         display: flex;
@@ -1224,6 +1263,9 @@
         display: block;
     }
 
+
+
+    
     .show-on-desktop-only {
         display: none;
     }
@@ -1252,6 +1294,7 @@
         color: black;
     }
 
+
     /*************************************************************** Media Query ****************************************************************/
 
     @media only screen and (min-width:1400px) {
@@ -1270,9 +1313,11 @@
         .hr-last-homepage {
             display: none;
         }
-        .cursor{
+
+        .cursor {
             display: none;
         }
+
         .m1-homePage,
         .m2-homePage,
         .m3-homePage,

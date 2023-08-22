@@ -39,8 +39,8 @@ export default function App() {
 
     const variants = {
         default: {
-            x: mousePosition.x - 7,
-            y: mousePosition.y - 7,
+            x: mousePosition.x - 6,
+            y: mousePosition.y - 6,
             backgroundColor: "rgb(231, 78, 7)"
 
         },

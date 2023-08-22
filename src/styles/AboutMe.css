@@ -9,6 +9,30 @@
     overflow: hidden;
 }
 
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
+
 .noise2 {
     position: fixed;
     top: -50%;
@@ -55,6 +79,13 @@
     text-decoration: none;
     color: white;
     font-size: 20px;
+}
+
+.link-nav2:hover {
+    color: red;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
 }
 
 .word {
@@ -159,6 +190,11 @@
     color: white;
     z-index: 1000;
     padding: 0 20px;
+
+}
+
+.linkedin-link-about:hover {
+    color: red;
 }
 
 .hashLink-about {
@@ -167,7 +203,9 @@
     color: white;
     padding-right: 20px;
 }
-
+.hashLink-about:hover{
+    color: red;
+}
 .two-spans-about {
     display: flex;
     justify-content: space-between;
@@ -255,7 +293,7 @@
         right: 0;
         background: url('../images/S-Profile-Image-BG-1-mobile.png');
         z-index: 1;
-     
+
         top: 0;
     }
 }

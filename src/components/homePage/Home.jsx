@@ -496,7 +496,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
                 <SectionImg2></SectionImg2>
               </div>
-          
+
             </Link>
 
 
@@ -632,7 +632,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
                 <SectionImg2></SectionImg2>
               </div>
-            
+
             </Link>
 
 
@@ -674,7 +674,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
                 <SectionImg2></SectionImg2>
               </div>
-          
+
             </Link>
 
             {mobile > 600 && (
@@ -814,7 +814,7 @@ export default function Homepage({ mouseEnter, mouseLeave }) {
 
                 <SectionImg2></SectionImg2>
               </div>
-             
+
             </Link>
 
 
