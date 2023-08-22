@@ -2,9 +2,11 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body {
     padding: 0;
     margin: 0;
+   cursor: pointer;
 }
 
 body::-webkit-scrollbar {
@@ -286,7 +288,12 @@ h2 {
     padding: 10px 30px;
     font-size: 40px;
 }
-
+@media only screen and (max-width:768px)  {
+    .dice-playAgain-container {
+        background: url('./images/dice2-mobile.jpg');
+        background-repeat: no-repeat;
+    }
+}
 
 /********* TENZI ****************/
 
@@ -411,6 +418,7 @@ h2 {
     border: 1px solid wheat;
     padding: 30px;
     background-color: rgba(0, 255, 255, 0.068);
+    color: white;
 }
 
 .weather-feels-like p {

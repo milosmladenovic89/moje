@@ -2,7 +2,12 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion"
 import memeLogo from "../../../../images/memesLogo1.png"
 import memeLogo2 from "../../../../images/memesLogo2.png"
-export default function Meme() {
+
+
+
+
+
+export default function Meme({mouseLeave}) {
     const [state, setState] = useState([])
     const [err,setErr]=useState("")
     const refInput = useRef()
@@ -37,7 +42,7 @@ export default function Meme() {
 
 
     return (
-        <div className="memes-main-container" >
+        <div className="memes-main-container"onMouseEnter={mouseLeave} >
 
             <div className="memes-container" >
 

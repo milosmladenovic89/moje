@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 
-export default function Tenzi() {
+export default function Tenzi({mouseLeave}) {
     const timeRef = useRef()
     const [time, setTime] = useState(0)
     const [count, setCount] = useState(0)
@@ -122,7 +122,7 @@ export default function Tenzi() {
 
 
 
-        <div className="dice-playAgain-container">
+        <div className="dice-playAgain-container" onMouseEnter={mouseLeave}>
 
             {
                 state.btn1 === state.btn2 && (state.btn1 === state.btn2) && (state.btn1 === state.btn3) && (state.btn1 === state.btn4) && (state.btn1 === state.btn5) &&

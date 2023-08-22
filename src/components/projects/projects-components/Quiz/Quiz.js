@@ -3,7 +3,7 @@ import dataForQuiz from './QuizData';
 import QuizMap from './QuizMap'
 import { motion } from 'framer-motion';
 
-export default function Quiz() {
+export default function Quiz({mouseLeave}) {
     const [count, setCount] = useState(Math.floor(Math.random() * 10))
     const [startQuiz, setStartQuiz] = useState(false)
     const [time, setTime] = useState(60)
@@ -59,7 +59,7 @@ export default function Quiz() {
 
 
     return (
-        <div>
+        <div onMouseEnter={mouseLeave}>
 
             {startQuiz ?
 

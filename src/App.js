@@ -165,10 +165,10 @@ export default function App() {
                     <Route path="/" element={<Home mouseEnter={mouseEnterApp} mouseLeave={mouseLeaveApp} />} />
                     <Route path="/about" element={< AboutMe  mouseEnterAbout={mouseEnterApp} mouseLeaveAbout={mouseLeaveApp} />} />
                     <Route path="https://www.linkedin.com/in/milos-mladenovic-8144b6244" />
-                    <Route path="/quiz/" element={<Quiz />} />
-                    <Route path="/memes" element={<Memes />} />
-                    <Route path="/tenzi" element={<Tenzi />} />
-                    <Route path="/weather" element={<Weather />} />
+                    <Route path="/quiz/" element={<Quiz mouseLeave={mouseLeaveApp}/>} />
+                    <Route path="/memes" element={<Memes mouseLeave={mouseLeaveApp}/>} />
+                    <Route path="/tenzi" element={<Tenzi mouseLeave={mouseLeaveApp}/>} />
+                    <Route path="/weather" element={<Weather mouseLeave={mouseLeaveApp}/>} />
 
                 </Routes>
 

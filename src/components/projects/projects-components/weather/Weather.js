@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
 
 
 
-export default function Weather() {
+export default function Weather({mouseLeave}) {
     const [location, setLocation] = useState("")
     const [data, setData] = useState({})
     const [loader, setLoader] = useState(false)
@@ -119,7 +119,7 @@ export default function Weather() {
 
 
 
-        <div className={`${imageRef.current}`}>
+        <div className={`${imageRef.current}`} onMouseEnter={mouseLeave}>
 
             <div className='weather-overlay'>
 
